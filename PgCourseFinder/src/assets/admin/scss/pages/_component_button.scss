@@ -1,0 +1,60 @@
+.demo-btn-box {
+    border-bottom: 1px solid rgba($black, 0.1);
+    &:last-child {
+        border-bottom: 0;
+    }
+    h6 {
+        font-size: 16px;
+        line-height: 100%;
+        font-weight: 600;
+        color: $black;
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 15px;
+        line-height: 25px;
+        color: $black;
+        margin-bottom: 10px;
+    }
+}
+
+.btn-primary {
+    background: $color-1;
+    border-color: $color-1;
+    &.btn-primary.disabled {
+        background: $color-3;
+        border-color: $color-3;
+    }
+    &:disabled {
+        background: $color-3;
+        border-color: $color-3;
+    }
+    &:hover {
+        background: $color-4;
+        border-color: $color-4;
+    }
+    &:focus, &:active:focus {
+        background: $color-4;
+        border-color: $color-4;
+        box-shadow: 0 0 0 0.25rem rgb($color-4, 40%);
+        color: $white;
+    }
+}
+.btn-outline-primary {
+    color: $color-4;
+    border-color: $color-1;
+    &:disabled {
+        background: $color-3;
+        border-color: $color-3;
+    }
+    &:hover {
+        background: $color-4;
+        border-color: $color-4;
+    }
+    &:focus, &:active:focus {
+        background: $color-4;
+        border-color: $color-4;
+        box-shadow: 0 0 0 0.25rem rgb($color-4, 40%);
+        color: $white;
+    }
+}

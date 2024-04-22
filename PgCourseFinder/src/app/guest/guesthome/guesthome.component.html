@@ -1,0 +1,109 @@
+<!-- ***** Main Banner Area Start ***** -->
+<section class="section main-banner" id="top" data-section="section1">
+	<video autoplay muted loop id="bg-video">
+	  <source src="/assets/college/images/course-video.mp4" type="video/mp4" />
+	</video>
+  
+	<div class="video-overlay header-text">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-lg-12">
+			<div class="caption">
+			  <h6>Hello Students</h6>
+			  <h2>Welcome to pg course finder portal</h2>
+			  <p></p>
+			  <div class="main-button-red">
+				<div class="scroll-to-section"><a [routerLink]="['/guestmaster/guestlogin',]" >login</a></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+<section class="upcoming-meetings" id="meetings">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-heading">
+          <h2>College view</h2>
+          <div class="main-button-red">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4" *ngFor="let data of collegeviewdataArray.slice(0,3)"><br>
+        <div class="categories" style="height:350px;">
+          <h4>College Name:&nbsp;&nbsp;&nbsp;&nbsp;{{data?.college_name}}</h4>
+          <img src="http://localhost:3000/images/{{data?.college_imge}}" alt="">
+        </div>
+        <br> <br>
+      </div>
+      <div style="text-align: center; color: aliceblue;">
+        <div class="main-button-red">
+          <a [routerLink]="['/guestmaster/guestlogin',]">View more</a>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="meeting-item">
+              <div class="thumb">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="our-facts">
+	<div class="container">
+	  <div class="row">
+		<div class="col-lg-6">
+		  <div class="row">
+			<div class="col-lg-12">
+			  <h2>A Few Facts About Our University</h2>
+			</div>
+			<div class="col-lg-6">
+			  <div class="row">
+				<div class="col-12">
+				  <div class="count-area-content percentage">
+					<div class="count-digit">94</div>
+					<div class="count-title">Succesed Students</div>
+				  </div>
+				</div>
+				<div class="col-12">
+				  <div class="count-area-content">
+					<div class="count-digit">126</div>
+					<div class="count-title">Current Teachers</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="col-lg-6">
+			  <div class="row">
+				<div class="col-12">
+				  <div class="count-area-content new-students">
+					<div class="count-digit">2345</div>
+					<div class="count-title">New Students</div>
+				  </div>
+				</div>
+				<div class="col-12">
+				  <div class="count-area-content">
+					<div class="count-digit">32</div>
+					<div class="count-title">Awards</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-lg-6 align-self-center">
+		  <div class="video">
+			<a href="https://www.youtube.com/watch?v=HndV87XpkWg" target="_blank"><img
+				src="/assets/college/images/play-icon.png" alt=""></a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>

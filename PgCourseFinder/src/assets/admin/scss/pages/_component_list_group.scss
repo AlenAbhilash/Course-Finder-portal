@@ -1,0 +1,8 @@
+.list-group {
+    .list-group-item {
+        &.active {
+            background-image: $gradient-1;
+            border-color: transparent;
+        }
+    }
+}

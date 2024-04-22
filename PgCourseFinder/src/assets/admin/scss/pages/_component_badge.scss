@@ -1,0 +1,32 @@
+.badge-light {
+    color: $black;
+    &.bg-primary {
+        background-color: $primary-light !important;
+    }
+    &.bg-secondary {
+        background-color: $secondary-light !important;
+    }
+    &.bg-success {
+        background-color: $success-light !important;
+    }
+    &.bg-danger {
+        background-color: $danger-light !important;
+    }
+    &.bg-warning {
+        background-color: $warning-light !important;
+    }
+    &.bg-info {
+        background-color: $info-light !important;
+    }
+    &.bg-dark {
+        background-color: $dark-light !important;
+        color: $white;
+    }
+}
+
+.btn {
+    .badge {
+        background: rgba($white, 0.2);
+        color: inherit;
+    }
+}

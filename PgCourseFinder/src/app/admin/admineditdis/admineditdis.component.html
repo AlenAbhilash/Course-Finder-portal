@@ -1,0 +1,29 @@
+<div class="main-content">
+    <div class="breadcrumb-wrap mb-20">
+        <div class="d-md-flex d-block justify-content-between align-items-center">
+            <div class="left">
+                <h1>District update</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6 col-lg-6">
+        <div class="panel mb-10">
+            <div class="panel-body">
+                <form [formGroup]="diseditform">
+                    <div>
+                        <div *ngFor="let data of disArray">
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">District</label>
+                                <input type="text" class="form-control" placeholder="enter Pgcourse name"
+                                    formControlName="dis_name">
+                                <input type="hidden" formControlName="dis_id">
+                            </div>
+                            <div class="d-flex justify-content-center">
+                            </div><br><br>
+                            <button type="submit" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

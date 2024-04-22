@@ -1,0 +1,41 @@
+.alert {
+    margin-bottom: 0;
+}
+.alert-d {
+    background: $light;
+    &.alert-primary {
+        background: $primary;
+        color: $white;
+        border-color: $primary;
+    }
+    &.alert-secondary {
+        background: $secondary;
+        color: $white;
+        border-color: $secondary;
+    }
+    &.alert-success {
+        background: $success;
+        color: $white;
+        border-color: $success;
+    }
+    &.alert-danger {
+        background: $danger;
+        color: $white;
+        border-color: $danger;
+    }
+    &.alert-warning {
+        background: $warning;
+        color: $white;
+        border-color: $warning;
+    }
+    &.alert-info {
+        background: $info;
+        color: $white;
+        border-color: $info;
+    }
+    &.alert-dark {
+        background: $dark;
+        color: $white;
+        border-color: $dark;
+    }
+}

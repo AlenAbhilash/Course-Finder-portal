@@ -1,0 +1,77 @@
+<section class="heading-page header-text" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>ADVANCES PAYMENT</h2>
+            </div>
+        </div>
+    </div>
+
+</section>
+<section class="contact-us" id="contact">
+    <form [formGroup]="advancespayment">
+        <div class='window mx-auto' *ngFor="let data of advancespaymentarray">
+            <div class='order-info'>
+                <div class='order-info-content'>
+                    <h2>Summary</h2>
+                    <div class='line'></div>
+                    <table class='order-table'>
+                        <tbody>
+                            <tr>
+                                <img src="http://localhost:3000/images/{{data?.college_imge}}"><br><br>
+                                <h6 class="card-text"><i class="fa fa-university" aria-hidden="true"></i>
+                                    College
+                                    Name: {{data?.college_name}}</h6>
+                                <h6 class="card-text">Pg Course:
+                                    {{data?.pgcourse_name}}
+                                </h6>
+                                <h6 class="card-text">Category: {{data?.category_name}}
+                                </h6>
+                                <i class="bi bi-chat">
+                                    <h6 class="card-text">Remark: {{data?.remark}}
+                                    </h6>
+                                </i><br>
+                                <h6 class="card-text"
+                                    [style.color]="data?.bookingstatus === 'Accepted' ? 'darkgreen' : ''">
+                                    {{data?.bookingstatus}}
+                                </h6>
+                        </tbody>
+                    </table>
+                    <div class='line'></div>
+                    <div class='total'>
+                        <span style='float:left;'>
+                            ADVANCES PAYMENT
+                        </span>
+                        <span style='float:right; text-align:right;'>
+                            5,000
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class='credit-info'>
+                <div class='credit-info-content'>
+                    <img src='https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png'
+                        style='width: auto; height: 40px;' class='credit-card-image'>
+                    Account Holder Name
+                    <input class='input-field' type="name" formControlName="names">
+                    From Account
+                    <div><input class='input-field' type="number" formControlName="facc">
+                        <div
+                            *ngIf="advancespayment.controls['facc'].invalid && (advancespayment.controls['facc'].dirty || advancespayment.controls['facc'].touched) || validationstatus">
+                            <div *ngIf="advancespayment.controls['facc'].errors['required']" style="color: red;">
+                                Please Enter </div>
+                        </div>
+                    </div>
+                    To Account
+                    <input class='input-field' type="number" formControlName="tacc">
+                    IFC CODE
+                    <input class='input-field' type="name" formControlName="">
+                    Payment Amount
+                    <input class='input-field' value='5,000' disabled><br><br><br>
+                    <button class='pay-btn' (click)="onSubmit()">PAY NOW</button>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br>
+    </form>
+</section>

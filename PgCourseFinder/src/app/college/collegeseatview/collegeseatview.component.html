@@ -1,0 +1,71 @@
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    .templatemo-item-col {
+        margin-bottom: 30px;
+    }
+
+    .meeting-item {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 8px;
+        height: 100%;
+    }
+</style>
+
+<section class="heading-page header-text" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>seat in Your College</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="meetings-page" id="meetings">
+    <form [formGroup]="collegeseatview">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="filters">
+                                <ul>
+                                    <li data-filter="*" class="active">Seats Available to the pgcourse</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div *ngFor="let data of seatdataArray" class="col-lg-4 templatemo-item-col all soon">
+                            <div class="meeting-item">
+                                <div class="down-content">
+                                    <h4>Pgcourse Name: {{data?.pgcourse_name}}</h4><br>
+                                    <h4>seat category: {{data?.category_name}}</h4><br>
+                                    <h4>Available seats: {{data?.seat_number}}</h4>
+                                    <br><a [routerLink]="['/collegemaster/collegeeditseat',data.seat_id]"><button
+                                            type="button" class="btn btn-primary"><span
+                                                class="bi bi-pen"></span></button></a>
+                                    &nbsp;
+                                    <button type="button" class="btn btn-danger"
+                                        (click)="deletecollegeseat(data.seat_id)">
+                                        <span class="bi bi-trash"></span>
+                                        <i class="typcn typcn-delete-outline btn-icon-append"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

@@ -1,0 +1,278 @@
+.fixed-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    background: $white;
+    transition: all 0.3s ease-in;
+    z-index: 111;
+    &.collapsed {
+        width: 60px;
+        .logo {
+            padding: 30px calc(25px / 2);
+            a {
+                width: 0;
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        .menu {
+            height: calc(100% - 116px);
+            .sidebar-menu {
+                padding: 0 calc(25px / 2);
+                ul {
+                    .sidebar-title {
+                        background: rgba($black, 0.2);
+                        height: 1px;
+                        margin: 10px 0;
+                        span {
+                            display: none;
+                        }
+                    }
+                    .sidebar-item {
+                        &.has-sub {
+                            &.active {
+                                .sidebar-link {
+                                    &:after {
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                            .sidebar-link {
+                                &.active {
+                                    &:after {
+                                        background: $color-2;
+                                    }
+                                }
+                                &:after {
+                                    width: 5px;
+                                    height: 5px;
+                                    top: calc(50% - 5px / 2);
+                                    left: calc(100% + 5px);
+                                    background: $color-2;
+                                    border-radius: 50%;
+                                    opacity: 0.5;
+                                }
+                            }
+                        }
+                        .sidebar-link {
+                            height: 35px;
+                            line-height: 35px;
+                            padding: 0 10px;
+                            border-radius: 5px;
+                            i {
+                                margin-right: 0;
+                            }
+                            span {
+                                width: 0;
+                                opacity: 0;
+                                visibility: hidden;
+                            }
+                        }
+                        .sub-menu {
+                            width: 150px;
+                            background: $white;
+                            padding: 10px;
+                            border: 1px solid rgba($black, 0.1);
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .logo {
+        padding: 50px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: $white;
+        border-bottom: 1px solid rgba($black, 0.1);
+        position: relative;
+        transition: all 0.3s ease-in;
+        z-index: 2;
+        .sidebar-collapse {
+            text-align: center;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            font-size: 25px;
+            padding: 0;
+            background: $color-1;
+            border-radius: 50%;
+            color: $white;
+        }
+        a {
+            width: 180px;
+            transition: all 0.3s ease-in;
+        }
+    }
+    .menu {
+        height: calc(100% - 135px);
+        .sidebar-menu {
+            padding: 0 30px;
+            transition: all 0.3s ease-in;
+            z-index: 1;
+            ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                .sidebar-title {
+                    height: 50px;
+                    padding: 0 20px;
+                    font-size: 15px;
+                    line-height: 50px;
+                    font-weight: 600;
+                    color: $black;
+                    transition: all 0.3s ease-in;
+                    span {
+                        transition: all 0.3s ease-in;
+                    }
+                }
+                .sidebar-item {
+                    &.has-sub {
+                        position: relative;
+                        &.active {
+                            .sidebar-link {
+                                &:after {
+                                    transform: rotate(180deg);   
+                                }
+                            }
+                        }
+                        .sidebar-link {
+                            position: relative;
+                            &.active {
+                                &:after {
+                                    background: url(../images/chevron-down-2.svg) center center no-repeat;
+                                    background-size: 17px;
+                                    z-index: 1;
+                                }
+                            }
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                right: 5px;
+                                bottom: 0;
+                                width: 25px;
+                                background: url(../images/chevron-down.svg) center center no-repeat;
+                                background-size: 17px;
+                                transition: all 0.3s ease-in;
+                                z-index: -1;
+                            }
+                        }
+                    }
+                    .sidebar-link {
+                        display: block;
+                        height: 50px;
+                        padding: 0 20px;
+                        font-size: 15px;
+                        line-height: 50px;
+                        font-weight: 500;
+                        color: $black;
+                        border-radius: 7px;
+                        transition: all 0.3s ease-in;
+                        &.active {
+                            background: $gradient-1;
+                            color: $white;
+                            i {
+                                color: $white;
+                            }
+                            &:hover, &:focus {
+                                background: $gradient-1;
+                            }
+                        }
+                        i {
+                            color: $color-2;
+                            margin-right: 10px;
+                            transition: all 0.3s ease-in;
+                        }
+                        span {
+                            transition: all 0.3s ease-in;
+                        }
+                        &:hover, &:focus {
+                            background: rgba($black, 0.05);
+                            outline: none;
+                        }
+                    }
+                    .sub-menu {
+                        padding-left: 50px;
+                        overflow: hidden;
+                        li {
+                            .sub-menu-item {
+                                font-size: 14px;
+                                line-height: 40px;
+                                font-weight: 500;
+                                color: $black;
+                                &.active {
+                                    color: $color-4;
+                                    padding-left: 5px;
+                                }
+                                &:hover {
+                                    padding-left: 5px;
+                                }
+                            }
+                        }
+                    }
+                    &:focus-within {
+                        .sidebar-link {
+                            background: rgba($black, 0.05);
+                            outline: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.tooltip-inner {
+    font-size: 12px;
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 1199px) {
+    .fixed-sidebar {
+        width: 280px;
+        transform: translateX(0);
+        border-right: 1px solid rgba($black, 0.1);
+        &.sidebar-mini {
+            transform: translateX(-100%);
+        }
+        .logo {
+            padding: 25px 20px;
+            .sidebar-collapse {
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 20px;
+            }
+            a {
+                width: 150px;
+            }
+        }
+        .menu {
+            height: calc(100% - 81px);
+            .sidebar-menu {
+                padding: 0 20px;
+                ul {
+                    .sidebar-title {
+                        height: 40px;
+                        font-size: 14px;
+                        line-height: 40px;
+                    }
+                    .sidebar-item {
+                        .sidebar-link {
+                            height: 40px;
+                            line-height: 40px;
+                            font-size: 14px;
+                        }
+                        .sub-menu {
+                            padding-left: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

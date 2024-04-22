@@ -1,0 +1,149 @@
+.form-control {
+    border-radius: 5px;
+    transition: 0.3s;
+    &::placeholder {
+        font-size: 14px;
+    }
+    &:focus {
+        box-shadow: 0px 0px 0px 4px rgba($color-1, 0.3);
+        border-color: $color-1;
+    }
+}
+.form-select {
+    border-radius: 5px;
+    transition: 0.3s;
+    &:focus {
+        box-shadow: 0px 0px 0px 4px rgba($color-1, 0.3);
+        border-color: $color-1;
+    }
+}
+.has-icon-left {
+    position: relative;
+    input {
+        padding-left: 35px;
+        &:focus + .form-control-icon {
+            color: $color-1;
+        }
+    }
+    .form-control-icon {
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 100%;
+        color: rgba($black, 0.5);
+        transition: 0.3s;
+    }
+}
+
+
+.form-check {
+    position: relative;
+    z-index: 2;
+    &.form-check-primary {
+        input {
+            &:checked {
+                background-color: $primary;
+                border-color: $primary;
+                & + label {
+                    color: $primary;
+                }
+            }
+            &:focus {
+                box-shadow: 0px 0px 0px 4px rgba($primary, 0.3);
+                border-color: $primary;
+            }
+        }
+    }
+    &.form-check-info {
+        input {
+            &:checked {
+                background-color: $info;
+                border-color: $info;
+                & + label {
+                    color: $info;
+                }
+            }
+            &:focus {
+                box-shadow: 0px 0px 0px 4px rgba($info, 0.3);
+                border-color: $info;
+            }
+        }
+    }
+    &.form-check-success {
+        input {
+            &:checked {
+                background-color: $success;
+                border-color: $success;
+                & + label {
+                    color: $success;
+                }
+            }
+            &:focus {
+                box-shadow: 0px 0px 0px 4px rgba($success, 0.3);
+                border-color: $success;
+            }
+        }
+    }
+    &.form-check-warning {
+        input {
+            &:checked {
+                background-color: $warning;
+                border-color: $warning;
+                & + label {
+                    color: $warning;
+                }
+            }
+            &:focus {
+                box-shadow: 0px 0px 0px 4px rgba($warning, 0.3);
+                border-color: $warning;
+            }
+        }
+    }
+    &.form-check-danger {
+        input {
+            &:checked {
+                background-color: $danger;
+                border-color: $danger;
+                & + label {
+                    color: $danger;
+                }
+            }
+            &:focus {
+                box-shadow: 0px 0px 0px 4px rgba($danger, 0.3);
+                border-color: $danger;
+            }
+        }
+    }
+    &.disabled {
+        label {
+            opacity: 0.5;
+        }
+    }
+    input {
+        transition: 0.3s;
+        cursor: pointer;
+        &:checked {
+            background-color: $color-1;
+            border-color: $color-1;
+            & + label {
+                color: $color-4;
+            }
+        }
+        &:focus {
+            box-shadow: 0px 0px 0px 4px rgba($color-1, 0.3);
+            border-color: $color-1;
+        }
+    }
+    label {
+        font-size: 14px;
+        line-height: 100%;
+        font-weight: 500;
+        color: $black;
+        user-select: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+}

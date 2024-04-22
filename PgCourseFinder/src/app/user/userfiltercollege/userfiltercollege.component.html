@@ -1,0 +1,32 @@
+<section class="meetings-page" id="meetings">
+    <form [formGroup]="userug">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="filters">
+                                <ul>
+                                    <li data-filter="*" class="active">Select the Ug Course You Studeied</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div *ngFor="let data of ugdataArray" class="col-lg-4 templatemo-item-col all soon">
+                            <div class="meeting-item">
+                                <div class="down-content">
+                                    <a [routerLink]="['/usermaster/userfiltercollegeug',data.ugcourse_id]">
+                                        <img src="http://localhost:3000/images/{{data?.ugcourse_img}}" alt=""><br>
+                                    </a>
+                                    <h5>{{data?.ugcourse_name}}</h5>
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

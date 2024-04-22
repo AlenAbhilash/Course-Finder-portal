@@ -1,0 +1,132 @@
+<section class="section main-banner" id="top" data-section="section1">
+  <video autoplay muted loop id="bg-video">
+    <source src="/assets/college/images/course-video.mp4" type="video/mp4" />
+  </video>
+  <div class="video-overlay header-text">
+    <div class="container" *ngFor="let data of collegedataArray">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="caption">
+            <h2>Welcome </h2>
+            <p> Welcome ,{{data?.college_name}}, &nbsp; to the platform, where you can explore and register for the
+              available courses. During registration, seats will be allocated based on predefined categories, each with
+              a specified number of seats. Additionally, management seat applicants may undergo an interview, and upon
+              successful selection, they will be required to make an advance payment to secure their enrollment. We
+              strive to provide a meaningful and efficient registration process for a seamless academic journey.
+            </p>
+            <div class="main-button-red">
+              <div class="scroll-to-section"><a [routerLink]="['/collegemaster/collegpgcourse',]">REGISTER THE PG
+                  COURSE</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="upcoming-meetings" id="meetings">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-heading">
+          <h2>Your Pg Course REGISTERED</h2>
+          <div class="main-button-red">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4" *ngFor="let data of pgdataArray.slice(0,3)"><br>
+        <div class="categories" style="height:350px;">
+          <h4>ugourse Name:{{data?.ugcourse_name}}</h4>
+          <img src="http://localhost:3000/images/{{data?.pgcourse_img}}" alt="">
+          <h4>Pgcourse Name: {{data?.pgcourse_name}}</h4>
+        </div>
+        <br> <br>
+      </div>
+      <div style="text-align: center; color: aliceblue;">
+        <div class="main-button-red">
+          <a [routerLink]="['/collegemaster/collegepgcourseview',]">View more</a>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="meeting-item">
+              <div class="thumb">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="apply-now" id="apply">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 align-self-center">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="item">
+              <h3>APPLIED STUDENTS</h3>
+              <p>STUDENTS WHICH APPLIED FOR THE PARTICULAR COURSES</p>
+              <div class="main-button-red">
+                <div class="scroll-to-section"><a [routerLink]="['/collegemaster/collegebookingpage']">APPLIED
+                    STUDENTS</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="item">
+              <h3>booking completed</h3>
+              <p>STUDENTS BOOKING COMPLETED OF MANAGEMENT SEATS</p>
+              <div class="main-button-yellow">
+                <div class="scroll-to-section"><a [routerLink]="['/collegemaster/collegepaymentpage']">booking completed</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="our-facts">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>ABOUT THE COLLEGE</h2>
+          </div>
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-12">
+                <div class="count-area-content">
+                  <div class="count-digit">{{ collegeappliedseatsarray.length }}</div>
+                  <div class="count-title">TOTAL REGISTERED SEATS IN YOUR COLLEGE</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="count-area-content">
+                  <div class="count-digit">{{ pgdataArray.length }}</div>
+                  <div class="count-title">TOTAL COURSE AVAILABLE IN YOUR COLLEGE</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-12">
+                <div class="count-area-content new-students">
+                  <div class="count-digit">{{ collegepaymentarray.length }}</div>
+                  <div class="count-title">MANAGEMENT BOOKING COMPLETED STUDENTS</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 align-self-center">
+      </div>
+    </div>
+  </div>
+</section>

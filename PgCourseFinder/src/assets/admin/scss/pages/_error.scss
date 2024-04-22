@@ -1,0 +1,41 @@
+.error-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    .error-row {
+        width: 700px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        min-height: 100% !important;
+        .error-panel {
+            width: 100%;
+            padding: 50px 0;
+            .part-img {
+                width: 550px;
+                margin: 0 auto 30px auto;
+            }
+            .part-txt {
+                text-align: center;
+                h2 {
+                    font-size: 60px;
+                    line-height: 100%;
+                    font-weight: 800;
+                    color: transparent;
+                    background: $gradient-1;
+                    background-clip: text;
+                    margin-bottom: 20px;
+                }
+                p {
+                    font-size: 20px;
+                    line-height: 25px;
+                    color: $black;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+}

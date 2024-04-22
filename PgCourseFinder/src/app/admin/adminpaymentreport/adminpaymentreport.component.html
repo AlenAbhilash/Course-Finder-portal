@@ -1,0 +1,48 @@
+<div class="main-content">
+    <div class="breadcrumb-wrap mb-20">
+        <div class="d-md-flex d-block justify-content-between align-items-center">
+            <div class="left">
+                <h1>Payment Report</h1>
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+    <div class="panel mb-5">
+        <form [formGroup]="paymentview">
+            <div class="panel-heading">
+                <span>Report</span>
+            </div>
+            <div>
+                <div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered" #TABLE #table>
+                                <thead class="custom-table-header">
+                                    <tr>
+                                        <th>User Name</th>
+                                        <th>College Name</th>
+                                        <th>Pgcourse Name</th>
+                                        <th>Advances Amount</th>
+                                        <th>5 % Admin Amount</th>
+                                        <th>Payment Date</th> 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of paymentarray; let i=index">
+                                        <td> {{data.user_name}}</td>
+                                        <td> {{data.college_name}}</td>
+                                        <td> {{data.pgcourse_name}}</td>
+                                        <td>{{data.amount}}</td>
+                                        <td>{{calculateAdminAmount(data.amount)}}</td>
+                                        <td>{{data.payment_date|date:"dd-MM-YYYY"}}</td>
+                                    </tr> 
+                                </tbody>
+                            </table><br>
+                            <button (click)="ExportTOExcel()" class="btn btn-success">ExportTOExcel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

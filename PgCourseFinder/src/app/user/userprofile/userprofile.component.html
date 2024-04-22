@@ -1,0 +1,64 @@
+<section class="meetings-page" id="meetings">
+    <form [formGroup]="userview">
+        <div class="container">
+            <div class="row gutters" *ngFor="let data of userdataArray">
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="account-settings">
+                                <div class="user-profile">
+                                    <div class="user-avatar">
+                                        <img src="http://localhost:3000/images/{{data?.user_img}}">
+                                    </div>
+                                    <h5 class="user-name"> {{data?.user_name}}</h5>
+                                    <h6 class="user-email"> {{data?.email}}</h6>
+                                </div>
+                                <div class="about">
+                                    <h5>About</h5>
+                                    <i class="bi bi-arrow-right" style="color: blue; font-size: 24px;"></i>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h4 class="mb-2 text-primary" style="text-decoration: underline;">Personal Details</h4>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="fullName">Full Name: {{data?.user_name}}</label><br>
+                                        <label for="fullName">Email: {{data?.email}}</label><br>
+                                        <label for="fullName">District: {{data?.dis_name}}</label><br>
+                                        <label for="fullName">Location: {{data?.loc_name}}</label><br>
+                                        <label for="fullName">Moblie Number: {{data?.phone}}</label><br>
+                                        <label for="fullName">Address: {{data?.address}}</label><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="text-right"><br><br>
+                                        <a [routerLink]="['/usermaster/userprofileedit',data.login_id]"><button type="button" id="submit" name="submit" class="btn btn-warning">Edit
+                                            Profile</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br>
+    </form>
+</section>

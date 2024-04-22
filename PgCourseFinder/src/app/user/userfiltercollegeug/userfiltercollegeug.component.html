@@ -1,0 +1,62 @@
+<section class="heading-page header-text" id="top">
+    <div class="col-lg-12">
+        <h2>College</h2>  
+    </div>
+</section>
+<section style="background-color: #eee;">
+    <form [formGroup]="userfiltercollegeug" class="mb-4">
+        <div class="container py-5">
+            <div class="container-wrapper">
+                <div class="sidebar">
+                    <h5><u>Pg Course Of The Chossen Ug Course </u></h5><br>
+                    <div>
+                        <a style="border-right: 2px solid #ccc;"
+                            *ngFor="let data of userpgcoursedataArray">{{data?.pgcourse_name}}</a>
+                    </div>
+                    <br><br>
+                    <h5><u>Possible Course Of the Ug Course</u></h5><br>
+                    <a style="border-right: 2px solid #ccc;"
+                        *ngFor="let data of userpossiblecoursedataArray">{{data?.pgcourse_name}}</a>
+                </div>
+                <div class="col-lg-9">
+                    <h4> Acoording to Your Filter </h4>
+                    <div>
+                        <div>
+                            <div *ngFor="let data of collegeview" class="card mb-4">
+                                <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                                            <img class="college-image img-fluid"
+                                                src="http://localhost:3000/images/{{data?.college_imge}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="fa fa-university" aria-hidden="true"></i>
+                                                College
+                                                Name: {{data?.college_name}}</h5>
+                                            <p class="card-text"><i class="bi bi-envelope"></i> College Email:
+                                                {{data?.email}}
+
+                                            </p>
+                                            <p class="card-text"><i class="bi bi-cash"></i> College Aid Type:
+                                                {{data?.type}}
+
+                                            </p>
+                                            <p class="card-text"><i class="bi bi-house"></i> College Address:
+                                                {{data?.Address}}
+
+                                            </p>
+                                            <a [routerLink]="['/usermaster/usercollegeviewmore',data.college_id]"><button
+                                                    class="btn btn-danger">View More Details</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

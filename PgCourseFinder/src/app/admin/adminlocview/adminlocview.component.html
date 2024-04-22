@@ -1,0 +1,58 @@
+<!-- main sidebar -->
+<div class="main-content">
+    <div class="breadcrumb-wrap mb-20">
+        <div class="d-md-flex d-block justify-content-between align-items-center">
+            <div class="left">
+                <h1>Location Registration</h1>
+            </div>
+            <div class="right"></div>
+        </div> 
+    </div>
+    <div class="panel mb-5">
+        <div class="panel-heading">
+            <span>Districts</span>
+        </div>
+        <form [formGroup]="locationgroup"> 
+            <div class="panel-body">
+                <div class="row mb-20">
+                    <div class="col-sm-6">
+                        <select class="form-control form-controlg" formControlName="dis_id" (change)="OnChange()">
+                            <option value="0">..Choose Your District...</option>
+                            <option *ngFor="let data of DistrictdataArray" value="{{data.dis_id}}">
+                                {{data.dis_name}}
+                            </option>
+                        </select> 
+                    </div>
+                </div> 
+                &nbsp;<button type="button" class="btn btn-primary"  [routerLink]="['/adminmaster/adminlocreg']">Add Location</button><br><br>
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <thead class="custom-table-header">
+                            <tr>
+                                <th>Slno.</th>
+                                <th>Location</th> 
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr> 
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of LocationdataArray; let i=index">
+                                <td>{{i+1}}</td>
+                                <td>{{data.loc_name}}</td>
+                                <td><a [routerLink]="['/adminmaster/admineditlocation',data.loc_id]"><button
+                                        type="button" class="btn btn-primary"><span class="bi bi-pen"></span></button></a></td>
+                                <td>
+                                    <button type="button" class="btn btn-danger"
+                                        (click)="deleteloc(data.loc_id)">
+                                        <span class="bi bi-trash"></span>
+                                        <i class="typcn typcn-delete-outline btn-icon-append"></i>
+                                    </button>
+                                </td> 
+                            </tr> 
+                        </tbody> 
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

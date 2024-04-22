@@ -1,0 +1,41 @@
+<div class="main-content">
+  <div class="breadcrumb-wrap mb-20">
+    <div class="d-md-flex d-block justify-content-between align-items-center">
+      <div class="left">
+        <h1>pg course update</h1>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-6 col-lg-6">
+    <div class="panel mb-10">
+      <div class="panel-body">
+        <form [formGroup]="pgcourseeditform">
+          <div class="form-group mb-20">
+            <label class="form-label" for="name">Ugcourse Name</label>
+            <select class="form-select" formControlName="ugcourse_id" aria-label="Default select example">
+              <option [value]="null">..choose your Ugcourse</option>
+              <option *ngFor="let data of UgArray" [value]="data.ugcourse_id">
+                {{ data.ugcourse_name }}
+              </option>
+            </select>
+          </div>
+          <div *ngFor="let data of pgArray">
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Pgcourse</label>
+              <input type="text" class="form-control" placeholder="enter Pgcourse name" formControlName="pgcourse_name">
+              <input type="hidden" formControlName="pgcourse_id" [value]="data.pgcourse_id">
+            </div>
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form3Example3cg">Image</label>
+              <input class="form-control" type="file" formControlName="pgcourse_img" (change)="selectFile($event)" />
+            </div>
+            <img src="http://localhost:3000/images/{{ data.pgcourse_img }}" alt="" width="200" height="200">
+          </div>
+          <div class="d-flex justify-content-center">
+          </div><br><br>
+          <button type="submit" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

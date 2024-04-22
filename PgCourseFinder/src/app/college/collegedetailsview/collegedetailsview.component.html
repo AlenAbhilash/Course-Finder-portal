@@ -1,0 +1,52 @@
+<section *ngFor="let data of collegedataArray" class="heading-page header-text" id="top" style="background-image: url('http://localhost:3000/images/{{data?.college_imge}}'); background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>College Profile</h2>
+            </div>
+        </div> 
+    </div>
+</section>
+<section class="meetings-page" id="meetings">
+    <form [formGroup]="collegeview">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12"> 
+                            <div *ngFor="let data of collegedataArray">
+                                <div class="meeting-single-item">
+                                    <div class="thumb">
+                                        <img src="http://localhost:3000/images/{{data?.college_imge}}" alt="">
+                                    </div>
+                                    <div class="down-content">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="hours">
+                                                    <h5> <i class="fa fa-university" aria-hidden="true"></i> College Name: {{data?.college_name}}</h5>
+                                                    <h5><i class="bi bi-envelope"></i> College Email: {{data?.email}}</h5>
+                                                    <h5><i class="bi bi-phone"></i> College Phone: {{data?.phone}}</h5>
+                                                    <h5><i class="bi bi-globe"></i> College Website: {{data?.website}}</h5>
+                                                    <h5><i class="bi bi-house"></i> College Address: {{data?.Address}}</h5>
+                                                    <h5><i class="bi bi-map"></i> College District: {{data?.dis_name}}</h5>
+                                                    <h5><i class="bi bi-pin-map-fill"></i> College Location: {{data?.loc_name}}</h5>
+                                                    <h5><i class="bi bi-cash"></i> College Aid Type: {{data?.type}}</h5>
+                                                </div>
+                                                <a [routerLink]="['/collegemaster/collegeprofileedit',data.login_id]"><button type="button" class="btn btn-primary"><span class="bi bi-pen"></span></button></a>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="main-button-red">
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br><br>
+        </div>
+    </form>
+</section>

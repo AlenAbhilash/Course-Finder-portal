@@ -1,0 +1,51 @@
+<!-- main sidebar -->
+<div class="main-content">
+    <div class="breadcrumb-wrap mb-20">
+        <div class="d-md-flex d-block justify-content-between align-items-center">
+            <div class="left">
+                <h1>District View</h1>
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+    <div class="panel mb-5">
+        <form [formGroup]="disgroup">
+            <div class="panel-heading">
+                <span>District</span>
+            </div>
+           &nbsp;  &nbsp; &nbsp; &nbsp;<button type="button" class="btn btn-primary"  [routerLink]="['/adminmaster/admindisreg']">Add District</button><br><br>
+            <div class="col-xl-6 col-lg-6">
+                <div class="panel mb-10">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered"> 
+                                <thead class="custom-table-header">
+                                    <tr>
+                                        <th>Slno.</th>
+                                        <th>District</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of disdataArray; let i=index">
+                                        <td>{{i+1}}</td>
+                                         <td>{{data.dis_name}}</td>
+                                         <td><button type="button" class="btn btn-primary"  [routerLink]="['/adminmaster/admineditdis',data.dis_id]">Edit</button></td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger"
+                                                (click)="deletedis(data.dis_id)">
+                                                Delete
+                                                <i class="typcn typcn-delete-outline btn-icon-append"></i>
+                                            </button> 
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

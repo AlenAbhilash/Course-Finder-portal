@@ -1,0 +1,48 @@
+<section class="heading-page header-text" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Pgcourse in Your College</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="meetings-page" id="meetings">
+    <form [formGroup]="collegepgview">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="filters"> 
+                                <ul>
+                                    <li data-filter="*" class="active">Pgcourse Available In our College</li>
+                                </ul>
+                            </div>
+                        </div>  
+                    </div> 
+                    <div class="row">
+                        <div *ngFor="let data of pgdataArray" class="col-lg-4 templatemo-item-col all soon">
+                            <div class="meeting-item">
+                                <div class="down-content">
+                                    <h4>ugourse Name: {{data?.ugcourse_name}}</h4>
+                                    <img src="http://localhost:3000/images/{{data?.pgcourse_img}}" alt="">
+                                    <h4>Pgcourse Name: {{data?.pgcourse_name}}</h4>
+                                    <h4>{{data?.fees}}</h4><br>
+                                     <br>
+                                    &nbsp;
+                                    <button type="button" class="btn btn-danger" 
+                                        (click)="deletecollegepg(data.collegepgcourse_id)">
+                                        <span class="bi bi-trash"></span>
+                                        <i class="typcn typcn-delete-outline btn-icon-append"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

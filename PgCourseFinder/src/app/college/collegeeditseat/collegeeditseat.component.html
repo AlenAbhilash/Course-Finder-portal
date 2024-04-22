@@ -1,0 +1,69 @@
+<section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Seat Update College</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="contact-us" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 align-self-center">
+          <div class="row">
+            <div class="col-lg-12" id="contact">
+              <form [formGroup]="seateditform" >
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>College Seat Update</h2>
+                  </div>
+                  <div class="col-lg-4">
+                    <label>Update the pg course Available in Your College</label>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-sm-6 mb-20">
+                            <select class="form-select" formControlName="collegepgcourse_id" aria-label="Default select example">
+                                <option>..choose your pgcourse</option>
+                                <option *ngFor="let data of collegepgArray" [ngValue]="data.collegepgcourse_id">{{ data.pgcourse_name }}</option>
+                              </select>                              
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <label>Update the Category Available in Your College</label>
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-sm-6 mb-20">
+                            <select class="form-select" formControlName="category_id" aria-label="Default select example">
+                                <option>..choose your pgcourse</option>
+                                <option *ngFor="let data of catArray" [ngValue]="data.category_id">{{ data.category_name }}</option>
+                              </select>                                
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <label> Update Number of Seat Available in the category of the selected PgCourse</label><br><br>
+                    <div>
+                      <input type="number" formControlName="seat_number" placeholder="Enter the Number of Seat" required="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <!-- <input type="hidden" formControlName="seat_id"> -->
+                  <button type="submit" id="form-submit" (click)="onSubmit()" class="btn btn-primary">Update</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <br><br><br><br><br><br>
+        </div>
+      </div>
+    </div>
+  </section>
+  

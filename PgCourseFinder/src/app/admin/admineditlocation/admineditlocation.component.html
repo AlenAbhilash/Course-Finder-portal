@@ -1,0 +1,32 @@
+<div class="main-content">
+  <div class="breadcrumb-wrap mb-20">
+      <div class="d-md-flex d-block justify-content-between align-items-center">
+          <div class="left">
+              <h1>District Registration</h1>  
+          </div>
+      </div>
+  </div> 
+  <div class="col-xl-6 col-lg-6">
+      <div class="panel mb-10">
+          <div class="panel-body"> 
+              <form [formGroup]="locationeditform"> 
+                  <div class="form-group mb-20"> 
+                      <label class="form-label" for="name">District Name</label>
+                      <select class="form-select" formControlName="dis_id" aria-label="Default select example">
+                          <option selected value="">..choose your district</option>
+                          <option *ngFor="let data of locationArray" value="{{data.dis_id}}">{{data.dis_name}}</option>
+                      </select>
+                  </div>
+                  <div>
+                      <div class="mb-3"> 
+                          <label for="exampleInputPassword1" class="form-label">Location</label>
+                          <input type="text" class="form-control" placeholder="enter Location name" formControlName="loc_name">
+                          <input type="hidden" formControlName="loc_id">
+                      </div>
+                      <button type="submit" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+                  </div>
+              </form>
+          </div>            
+      </div>
+  </div>
+</div>

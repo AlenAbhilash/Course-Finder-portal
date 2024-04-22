@@ -1,0 +1,39 @@
+  <!-- main sidebar -->
+  <div class="main-content">
+    <div class="breadcrumb-wrap mb-20">
+        <div class="d-md-flex d-block justify-content-between align-items-center">
+            <div class="left">
+                <h1>UG Course Registration</h1>  
+            </div> 
+            <div class="right">
+                <nav aria-label="breadcrumb">
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="row g-10">
+        <div class="col-xl-6 col-lg-6">
+            <div class="panel mb-10">
+                <div class="panel-heading">
+                    <span></span> 
+                </div>
+                <div class="panel-body">
+                    <form [formGroup]="ugregform" enctype="multipart/form-data">
+                        <div class="form-group mb-20">
+                            <label class="form-label" for="Name">Ug course Name</label>
+                            <input type="email" class="form-control" formControlName="ugname"
+                             id="Name" placeholder="Enter the Ug Course Name">
+                        </div>
+                        <div class="form-group mb-20">
+                            <label class="form-label" for="exampleInputFile">Ug Course Image</label>
+                         <input class="form-control"  formControlName="ugimage" (change)="selectFile($event)" type="file" id="Image">
+                        </div>
+                        
+                        <div class="btn-box"> 
+                            <button type="reset" class="btn btn-light">Reset Form</button>
+                            <button type="submit" (click)="onSubmit()" class="btn btn-success">Submit Form</button>
+                        </div>
+                    </form>
+                </div>
+            </div>

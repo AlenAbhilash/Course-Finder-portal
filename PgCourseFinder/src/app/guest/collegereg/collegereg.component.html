@@ -1,0 +1,161 @@
+<section class="heading-page header-text" id="top"
+	style="background-image: url('/assets/college/images/cambridge.avif'); background-size: cover; position: relative;">
+	<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.2);">
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h2>College Registration</h2>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="contact-us" id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-9 mx-auto align-center">
+				<div class="row">
+					<div class="col-lg-12" id="contact">
+						<form [formGroup]="collegereggroup">
+							<h1>
+								<ul>College Registration</ul>
+							</h1>
+							<br><br>
+
+							<div>
+								<label class="form-label" for="name">College Name</label>
+								<input name="name" type="text" formControlName="college_name" class="form-control"
+									placeholder="Enter the College Name" required="required">
+							</div>
+							<div
+								*ngIf="collegereggroup.controls['college_name'].invalid && (collegereggroup.controls['college_name'].dirty || collegereggroup.controls['college_name'].touched) || validationstatus">
+								<div *ngIf="collegereggroup.controls['college_name'].errors['required']"
+									style="color: red;">Please Enter Your Name </div>
+								<div *ngIf="collegereggroup.controls['college_name'].errors['pattern']"
+									style="color: red;">First letter must be character </div>
+							</div>
+							<div>
+								<label class="form-label" for="email">College Email</label>
+								<input name="email" type="text" formControlName="email" class="form-control"
+									pattern="[^ @]*@[^ @]*" placeholder="Enter the College Email" required="required">
+							</div>
+							<div
+								*ngIf="collegereggroup.controls['email'].invalid && (collegereggroup.controls['email'].dirty || collegereggroup.controls['email'].touched) || validationstatus">
+								<div *ngIf="collegereggroup.controls['email'].errors['required']" style="color: red;">
+									Please Enter Your Email Address </div>
+								<div *ngIf="collegereggroup.controls['email'].errors['email']" style="color: red;">
+									Please check your format of Email </div>
+							</div>
+							<div>
+								<label class="form-label" for="number">College Number</label>
+								<input name="number" type="number" formControlName="phone" class="form-control"
+									placeholder="Enter the contact Number" required="required">
+							</div>
+							<div
+								*ngIf="collegereggroup.controls['phone'].invalid && (collegereggroup.controls['phone'].dirty || collegereggroup.controls['phone'].touched) || validationstatus">
+								<div *ngIf="collegereggroup.controls['phone'].errors['pattern']" style="color: red;">
+									Only numeric characters allowed</div>
+							</div>
+							<div>
+								<label class="form-label" for="website">College Website</label>
+								<input name="Website" type="website" formControlName="website" class="form-control"
+									placeholder="Enter the College website" required="required">
+							</div>
+							<div
+								*ngIf="collegereggroup.controls['website'].invalid && (collegereggroup.controls['website'].dirty || collegereggroup.controls['website'].touched) || validationstatus">
+								<div *ngIf="collegereggroup.controls['website'].errors['required']" style="color: red;">
+									Please Enter Your Website Link </div>
+								<div *ngIf="collegereggroup.controls['website'].errors['pattern']" style="color: red;">
+									First letter must be character </div>
+							</div>
+							<label class="form-label" for="website">College Aid Type</label>
+							<select class="form-control form-controlg" formControlName="type">
+								<option value="aided">aided</option>
+								<option value="Unaided">Unaided</option>
+							</select>
+							<div>
+								<label class="form-label" for="district">College District</label>
+								<select class="form-control form-controlg" formControlName="dis_id">
+									<option value="0">..Choose Your District...</option>
+									<option *ngFor="let data of DistrictdataArray" value="{{data.dis_id}}">
+										{{data.dis_name}}
+									</option>
+								</select>
+							</div>
+
+
+							<div>
+								<label class="form-label" for="location">College Location</label>
+								<select class="form-control form-controlg" formControlName="loc_id">
+									<option value="0">..Choose Your Location...</option>
+									<option *ngFor="let data of LocationdataArray" [value]="data.loc_id">
+										{{data.loc_name}}
+									</option>
+								</select>
+							</div>
+
+
+							<div>
+								<label class="form-label" for="address">College Address</label>
+								<textarea name="message" formControlName="Address" class="form-control"
+									placeholder="Enter College Address" required=""></textarea>
+							</div>
+
+							<div>
+								<label class="form-label" for="pincode">College Pincode</label>
+								<input name="pincode" type="number" formControlName="pincode" class="form-control"
+									placeholder="Enter the College pincode" required="required">
+							</div>
+							<div
+								*ngIf="collegereggroup.controls['pincode'].invalid && (collegereggroup.controls['pincode'].dirty || collegereggroup.controls['pincode'].touched) || validationstatus">
+								<div *ngIf="collegereggroup.controls['pincode'].errors['pattern']" style="color: red;">
+									Only numeric characters allowed</div>
+							</div>
+							<div class="form-group">
+								<label class="form-label" for="image">College Image</label>
+								<input class="form-control" formControlName="college_imge" (change)="selectFile($event)"
+									type="file" id="image">
+							</div>
+
+							<div>
+								<label class="form-label" for="id">College Username</label>
+								<input name="id" type="text" formControlName="username" class="form-control"
+									placeholder="Enter the College ID" required="required">
+								<input type="hidden" formControlName="login_id">
+							</div>
+							<div
+								*ngIf="(collegereggroup.controls['username'].invalid && (collegereggroup.controls['username'].dirty || collegereggroup.controls['username'].touched)) || validationstatus">
+								<div *ngIf="collegereggroup.controls['username'].errors && collegereggroup.controls['username'].errors['pattern']"
+									style="color: red;">Only alphanumeric characters allowed</div>
+							</div>
+							<div>
+								<label class="form-label" for="password">College Password</label>
+								<input name="Password" type="password" formControlName="password" class="form-control"
+									placeholder="Enter new password" required="required">
+							</div>
+							<div
+								*ngIf="collegereggroup.controls['password'].invalid && (collegereggroup.controls['password'].dirty || collegereggroup.controls['password'].touched) || validationstatus">
+								<div *ngIf="collegereggroup.controls['password'].errors['pattern']" style="color: red;">
+									Only alphanumeric characters allowed</div>
+							</div>
+							<div>
+								<label class="form-label" for="confirm-password">Confirm College Password</label>
+								<input name="Password" type="password" class="form-control"
+									placeholder="Re-enter password" required="required">
+							</div>
+							<div
+								*ngIf="collegereggroup.controls['password'].invalid && (collegereggroup.controls['password'].dirty || collegereggroup.controls['password'].touched) || validationstatus">
+								<div *ngIf="collegereggroup.controls['password'].errors['pattern']" style="color: red;">
+									Only alphanumeric characters allowed</div>
+							</div>
+							<div>
+								<button type="submit" (click)="onSubmit()" id="form-submit">Register Now</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<br><br><br><br><br><br>
+			</div>
+		</div>
+	</div>
+</section>

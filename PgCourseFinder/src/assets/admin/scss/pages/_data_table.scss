@@ -1,0 +1,65 @@
+#myTable {
+    padding-top: 20px;
+    margin-bottom: 16px;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 0;
+    border-color: #dfe0e1;
+}
+
+#myTable_wrapper .dataTables_length select {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: .375rem 2.25rem .375rem .75rem;
+    display: inline;
+    width: auto;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: .375rem .75rem;
+    display: inline;
+    width: auto;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+    border-top: 1px solid rgba($black, 0.1);
+    border-bottom: 1px solid rgba($black, 0.1);
+    &:first-child {
+        border-left: 1px solid rgba($black, 0.1);
+    }
+    &:last-child {
+        border-right: 1px solid rgba($black, 0.1);
+    }
+}
+
+.dataTables_paginate {
+    display: flex;
+    gap: 5px;
+    span {
+        display: flex;
+        gap: 5px;
+    }
+}
+
+.data-table {
+    min-width: auto;
+    thead {
+        th {
+            &:nth-child(1) {
+                width: 5%;
+            }
+            &:nth-child(2) {
+                width: 20%;
+            }
+            &:nth-child(3) {
+                width: 30%;
+            }
+            &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+                width: 15%;
+            }
+        }
+    }
+}

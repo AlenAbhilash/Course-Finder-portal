@@ -1,0 +1,92 @@
+<section class="meetings-page" id="meetings">
+    <br>
+    <br>
+    <br>
+    <br>
+    <form [formGroup]="collegeprofile">
+        <div class="container">
+            <div class="row gutters" *ngFor="let data of collegeprofileeditarray">
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="account-settings">
+                                <div class="user-profile">
+                                    <div class="user">
+                                        <img src="http://localhost:3000/images/{{data?.college_imge}}">
+                                    </div>
+                                    <h5 class="user-name"></h5>
+                                    <h6 class="user-email"></h6>
+                                </div>
+                                <div class="about">
+                                    <p></p>
+                                    <input class="form-control" type="file" formControlName="college_imge" (change)="selectFile($event)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h4 class="mb-2 text-primary" style="text-decoration: underline;">Update College
+                                        Details</h4>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="fullName">College Name</label>
+                                        <input type="text" class="form-control" formControlName="college_name">
+                                        <label for="fullName">Email</label>
+                                        <input type="text" class="form-control" formControlName="email">
+                                        <label for="fullName">Select District</label>
+                                        <select class="form-control form-controlg" formControlName="dis_id">
+                                            <option value="0">..Choose Your District...</option>
+                                            <option *ngFor="let data of diseditarray" value="{{data.dis_id}}">
+                                                {{data.dis_name}}
+                                            </option>
+                                        </select>
+                                        <label for="fullName">Select Location</label>
+                                        <select class="form-control form-controlg" formControlName="loc_id">
+                                            <option value="0">..Choose Your Location...</option>
+                                            <option *ngFor="let data of loceditarray" [value]="data.loc_id">
+                                                {{data.loc_name}}
+                                             </option>
+                                        </select>
+                                        <label for="fullName">Phone</label>
+                                        <input type="text" class="form-control" formControlName="phone">
+                                            <label for="fullName">Pincode</label>
+                                        <input type="text" class="form-control" formControlName="pincode">
+                                            <label for="fullName">Address</label>
+                                        <input type="text" class="form-control" formControlName="Address">
+                                        <label for="fullName">website</label>
+                                        <input type="text" class="form-control" formControlName="website">
+                                        <label for="fullName">Type</label>
+                                        <select class="form-control form-controlg" formControlName="type">
+                                            <option value="aided">aided</option>
+                                            <option value="Unaided">Unaided</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="text-right"><br><br>
+                                        <button type="button" (click)="Onsubmit()" name="submit" class="btn btn-warning">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br>
+    </form>
+</section>

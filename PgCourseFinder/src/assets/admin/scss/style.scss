@@ -1,0 +1,51 @@
+/* google-font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+// scss variables
+@import "main/variable";
+/* global style */
+@import "main/global";
+
+/* fixed sidebar style */
+@import "sections/fixed_sidebar";
+/* main content style */
+@import "sections/main_content";
+/* breadcrumb style */
+@import "sections/breadcrumb";
+
+/* component_alert page style */
+@import "pages/component_alert";
+/* component_badge page style */
+@import "pages/component_badge";
+/* component_button page style */
+@import "pages/component_button";
+/* component_card page style */
+@import "pages/component_card";
+/* component_carousel page style */
+@import "pages/component_carousel";
+/* component_list_group page style */
+@import "pages/component_list_group";
+/* component_progress page style */
+@import "pages/component_progress";
+/* form_element page style */
+@import "pages/form_element";
+/* table page style */
+@import "pages/table";
+/* data_table page style */
+@import "pages/data_table";
+/* editor page style */
+@import "pages/editor";
+/* widget page style */
+@import "pages/widget";
+/* icons page style */
+@import "pages/icons";
+/* mail page style */
+@import "pages/mail";
+/* authentication page style */
+@import "pages/authentication";
+/* error page style */
+@import "pages/error";
+
+
+/* responsive style */
+@import "main/responsive";

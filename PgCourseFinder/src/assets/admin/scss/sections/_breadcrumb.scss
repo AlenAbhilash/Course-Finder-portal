@@ -1,0 +1,43 @@
+.breadcrumb-wrap {
+    background: $white;
+    padding: 35px 30px;
+    border: 1px solid rgba($color-4, 0.15);
+    .left {
+        width: calc(100% - 290px);
+        h1 {
+            font-family: $heading-font;
+            font-size: 30px;
+            line-height: 100%;
+            font-weight: 700;
+            color: $color-1;
+            margin-top: -3px;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 20px;
+            color: $black;
+            margin-bottom: -2px;
+        }
+    }
+    .right {
+        width: 270px;
+        display: flex;
+        justify-content: flex-end;
+        nav {
+            .breadcrumb {
+                margin-bottom: 0;
+                .breadcrumb-item {
+                    padding-left: 10px;
+                    &:before {
+                        display: none;
+                    }
+                    a {
+                        font-weight: 600;
+                        color: $color-2;
+                    }
+                }
+            }
+        }
+    }
+}

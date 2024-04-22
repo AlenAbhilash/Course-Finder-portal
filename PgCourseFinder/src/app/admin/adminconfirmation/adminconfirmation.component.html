@@ -1,0 +1,61 @@
+<!-- main sidebar -->
+<div class="main-content">
+    <div class="breadcrumb-wrap mb-20">
+        <div class="d-md-flex d-block justify-content-between align-items-center">
+            <div class="left">
+                <h1>College confirmation </h1>
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+    <div class="panel mb-5">
+        <form [formGroup]="collegegroup"> 
+            <div class="panel-heading">
+                <span>Status</span>
+            </div>
+            <div>
+                <div>
+                    <div class="panel-body">
+                        <div class="row mb-20">
+                            <div class="  &nbsp;&nbsp;&nbsp;" class="col-sm-3">
+                                <select class="form-control form-controlg" formControlName="status"
+                                    (change)="OnChange()">
+                                    <option value="accepted">accepted</option>
+                                    <option value="rejected">rejected</option>
+                                    <option value="collegeconfirmation">college confirmation</option>
+                                </select>
+                            </div> 
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered ">
+                                <thead class="custom-table-header">
+                                    <tr> 
+                                        <th>Slno.</th>
+                                        <th>College</th>
+                                        <th>College Website</th>
+                                        <th>status</th>
+                                        <th>accepted</th>
+                                        <th>rejected</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of collegedataArray; let i=index">
+                                        <td>{{i+1}}</td>
+                                        <td>{{data.college_name}}</td>
+                                        <td>{{data.website}}</td>
+                                        <td>{{data.status}}</td>
+                                        <td><button type="button" (click)="onSubmit(data.login_id)"><span style='font-size:30px;'>&#9989;</span></button></td>
+                                        <td>
+                                            <button type="button" (click)="onRejected(data.login_id)"><span style='font-size:30px;'>&#10060;</span></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

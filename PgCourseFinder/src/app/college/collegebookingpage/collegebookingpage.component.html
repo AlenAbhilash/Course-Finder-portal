@@ -1,0 +1,47 @@
+<section class="heading-page header-text" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Applied Students & Interview Scheduled</h2>
+            </div>
+        </div>
+    </div>
+</section> 
+<section class="meetings-page" id="meetings">
+    <form [formGroup]="collegebooking">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row"> 
+                        <div class="col-lg-12">
+                            <div class="filters">
+                                <ul>
+                                    <li data-filter="*" class="active" >Applied Students To Pgcourse</li>
+                                    <li data-filter="*" class="active"[routerLink]="['/collegemaster/interviewmanagement']">Interview Scheduled For Management Seat Applied Students</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div *ngFor="let data of pgdataArray" class="col-lg-4 templatemo-item-col all soon">
+                            <div class="meeting-item">
+                                <div class="down-content">
+                                    <img src="http://localhost:3000/images/{{data?.pgcourse_img}}" alt="">
+                                    <h4>Pgcourse Name: {{data?.pgcourse_name}}</h4>
+                                    <br>
+                                    &nbsp;
+                                    <a
+                                        [routerLink]="['/collegemaster/collegebookingpageviewmore',data.collegepgcourse_id]"><button
+                                            class="btn btn-danger">
+                                            Applied Students
+                                        </button></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </form>
+</section>

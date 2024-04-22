@@ -1,0 +1,90 @@
+<body>
+    <!-- main sidebar -->
+    <div class="fixed-sidebar sidebar-mini">
+        <!-- Sidebar content -->
+        <div class="logo">
+            <button class="sidebar-collapse"><i class="bi bi-list"></i></button>
+            <a><img src="/assets/admin/images/Screenshot 2024-03-10 125521.png" alt="LOGO" width="500" height="500">
+            </a>
+        </div>
+        <!-- sidebar menu -->
+        <div class="menu">
+            <div class="custom-scroll">
+                <div class="sidebar-menu">
+                    <ul>
+
+                        <li class="sidebar-item"><a [routerLink]="['/adminmaster/adminhome']"
+                                class="sidebar-link active" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="HOME PAGE" tabindex="0"><i class="bi bi-grid-fill"></i> <span>ADMIN HOME
+                                </span></a></li>
+                        <li class="sidebar-item has-sub">
+                            <a role="button" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="Components" tabindex="0"><i class="bi bi-stack"></i>
+                                <span>REGISTRATION</span></a>
+                            <ul class="sub-menu">
+                                <li><a class="sub-menu-item" [routerLink]="['/adminmaster/admindisreg']">District
+                                        Registration</a></li>
+                                <li><a class="sub-menu-item" [routerLink]="['/adminmaster/adminlocreg']">Location
+                                        Registration</a></li>
+                                <li><a class="sub-menu-item" [routerLink]="['/adminmaster/admincategory']">Category
+                                        Registration</a></li>
+                                <li><a class="sub-menu-item" [routerLink]="['/adminmaster/adminugcourse']">Ugcourse
+                                        Registration</a></li>
+                                <li><a class="sub-menu-item"
+                                        [routerLink]="['/adminmaster/adminpossiblecourse']">possiblecourse
+                                        Registration</a></li>
+                                <li><a class="sub-menu-item" [routerLink]="['/adminmaster/adminpgcourse']">PgCourse
+                                        Registration</a></li>
+                                        <li><a class="sub-menu-item" [routerLink]="['/adminmaster/adminconfirmation']">College Confirmation</a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item has-sub">
+                            <a role="button" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="Components" tabindex="0"><i class="bi bi-grid-1x2-fill"></i> <span>VIEW
+                                    REGISTRATED</span></a>
+                            <ul class="sub-menu">
+                                <li><a class="sub-menu-item" [routerLink]="['/adminmaster/admindisview']">District
+                                        View</a></li>
+                                <li><a class="sub-menu-item" [routerLink]="['/adminmaster/adminlocview']">Location
+                                        View</a></li>
+                                <li><a class="sub-menu-item" [routerLink]="['/adminmaster/admincategoryview']">Category
+                                        View</a></li>
+                                <li><a class="sub-menu-item" [routerLink]="['/adminmaster/adminugcourseview']">Ugcourse
+                                        View</a></li>
+                                <li><a class="sub-menu-item"
+                                        [routerLink]="['/adminmaster/adminpossiblecourseview']">possiblecourse View</a>
+                                </li>
+                                <li><a class="sub-menu-item" [routerLink]="['/adminmaster/adminpgcourseview']">PgCourse
+                                        View</a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item has-sub">
+                            <a role="button" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="Components" tabindex="0"><i
+                                    class="bi bi-collection-fill"></i><span>REPORT</span></a>
+                            <ul class="sub-menu">
+                                <li><a class="sub-menu-item" [routerLink]="['/adminmaster/adminpaymentreport']">Payment Report</a></li>
+                                <li><a class="sub-menu-item" [routerLink]="['/adminmaster/admincollegereport']">College Report</a></li>
+                                <li><a class="sub-menu-item" [routerLink]="['/adminmaster/adminuserreport']">User Report</a></li>
+                                <li><a class="sub-menu-item" [routerLink]="['/adminmaster/adminpaymentdatewisereport']">Payment Date wise </a></li>
+                                <li><a class="sub-menu-item" [routerLink]="['/adminmaster/adminuserregdatewise']">User Date wise Registration</a></li>
+                                <li><a class="sub-menu-item"[routerLink]="['/adminmaster/userseatbookingpiechart']">College seat applied piechart</a>
+                                <li><a class="sub-menu-item"[routerLink]="['/adminmaster/possiblecoursepiechartreport']">Aided & Unaided College pie chart</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"><a [routerLink]="['/guestmaster/guestlogin']" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="LOGOUT" tabindex="0"><i class="bi bi-box-arrow-right"></i><span>LOGOUT</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- sidebar menu -->
+    </div>
+    <router-outlet></router-outlet>
+    <!-- main sidebar -->
+    <script src="/assets/admin/jquery-3.6.0.min.js"></script>
+    <script src="/assets/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/assets/admin/js/apexcharts.js"></script>
+    <script src="/assets/admin/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/admin/js/main.js"></script>
+    <script src="/assets/admin/js/chart-init.js"></script>

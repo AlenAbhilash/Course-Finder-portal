@@ -1,0 +1,152 @@
+<section class="heading-page header-text" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>User Registration</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact-us" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 mx-auto align-center">
+                <div class="row">
+                    <div class="col-lg-12" id="contact">
+                        <form [formGroup]="userreggroup">
+
+                            <div class="contact-form">
+                                <h1>
+                                    <ul>User Registration</ul>
+                                </h1>
+                                <br><br>
+                                <div>
+                                    <label class="form-label" for="name">user Name</label>
+                                    <input name="name" type="text" formControlName="user_name" class="form-control"
+                                        placeholder="Enter the user Name" required="required">
+                                </div>
+                                <div
+                                    *ngIf="userreggroup.controls['user_name'].invalid && (userreggroup.controls['user_name'].dirty || userreggroup.controls['user_name'].touched) || validationstatus">
+                                    <div *ngIf="userreggroup.controls['user_name'].errors['required']"
+                                        style="color: red;">Please Enter Your Name </div>
+                                    <div *ngIf="userreggroup.controls['user_name'].errors['pattern']"
+                                        style="color: red;">First letter must be character </div>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="email">user Email</label>
+                                    <input name="email" type="text" formControlName="email" class="form-control"
+                                        pattern="[^ @]*@[^ @]*" placeholder="Enter the user Email" required="required">
+                                </div>
+                                <div
+                                    *ngIf="userreggroup.controls['email'].invalid && (userreggroup.controls['email'].dirty || userreggroup.controls['email'].touched) || validationstatus">
+                                    <div *ngIf="userreggroup.controls['email'].errors['required']" style="color: red;">
+                                        Please Enter Your Email Address </div>
+                                    <div *ngIf="userreggroup.controls['email'].errors['email']" style="color: red;">
+                                        Please check your format of Email </div>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="number">User Contact</label>
+                                    <input name="number" type="number" formControlName="phone" class="form-control"
+                                        placeholder="Enter the contact Number" required="required">
+                                </div>
+                                <div
+                                    *ngIf="userreggroup.controls['phone'].invalid && (userreggroup.controls['phone'].dirty || userreggroup.controls['phone'].touched) || validationstatus">
+                                    <div *ngIf="userreggroup.controls['phone'].errors['pattern']" style="color: red;">
+                                        Only numeric characters allowed</div>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="district">College District</label>
+                                    <select class="form-control form-controlg" formControlName="dis_id">
+                                        <option value="0">..Choose Your District...</option>
+                                        <option *ngFor="let data of DistrictdataArray" value="{{data.dis_id}}">
+                                            {{data.dis_name}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div
+                                    *ngIf="userreggroup.controls['dis_id'].invalid && (userreggroup.controls['dis_id'].dirty || userreggroup.controls['dis_id'].touched)">
+                                    <div *ngIf="userreggroup.controls['dis_id'].hasError('required')"
+                                        style="color: red;">District is required</div>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="location">College Location</label>
+                                    <select class="form-control form-controlg" formControlName="loc_id">
+                                        <option value="0">..Choose Your Location...</option>
+                                        <option *ngFor="let data of LocationdataArray" [value]="data.loc_id">
+                                            {{data.loc_name}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div
+                                    *ngIf="userreggroup.controls['loc_id'].invalid && (userreggroup.controls['loc_id'].dirty || userreggroup.controls['loc_id'].touched)">
+                                    <div *ngIf="userreggroup.controls['loc_id'].hasError('required')"
+                                        style="color: red;">Location is required</div>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="address">user Address</label>
+                                    <textarea name="message" formControlName="address" class="form-control"
+                                        placeholder="Enter user address" required=""></textarea>
+                                </div>
+                                <div
+                                    *ngIf="userreggroup.controls['address'].invalid && (userreggroup.controls['address'].dirty || userreggroup.controls['address'].touched)">
+                                    <div *ngIf="userreggroup.controls['address'].hasError('required')"
+                                        style="color: red;">Address is required</div>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="pincode">user Pincode</label>
+                                    <input name="pincode" type="number" formControlName="pincode" class="form-control"
+                                        placeholder="Enter the user pincode" required="required">
+                                </div>
+                                <div
+                                    *ngIf="userreggroup.controls['pincode'].invalid && (userreggroup.controls['pincode'].dirty || userreggroup.controls['pincode'].touched) || validationstatus">
+                                    <div *ngIf="userreggroup.controls['pincode'].errors['pattern']" style="color: red;">
+                                        Only numeric characters allowed</div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="image">User Image</label>
+                                    <input class="form-control" formControlName="user_img" (change)="selectFile($event)"
+                                        type="file" id="image">
+                                </div>
+                                <div>
+                                    <label class="form-label" for="id"> User name</label>
+                                    <input name="id" type="text" formControlName="username" class="form-control"
+                                        placeholder="Enter the username" required="required">
+                                    <input type="hidden" formControlName="login_id">
+                                </div>
+                                <div
+                                    *ngIf="(userreggroup.controls['username'].invalid && (userreggroup.controls['username'].dirty || userreggroup.controls['username'].touched)) || validationstatus">
+                                    <div *ngIf="userreggroup.controls['username'].errors && userreggroup.controls['username'].errors['pattern']"
+                                        style="color: red;">Only alphanumeric characters allowed</div>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="password">User Password</label>
+                                    <input name="Password" type="password" formControlName="password"
+                                        class="form-control" placeholder="Enter new password" required="required">
+                                </div>
+                                <div
+                                    *ngIf="userreggroup.controls['password'].invalid && (userreggroup.controls['password'].dirty || userreggroup.controls['password'].touched) || validationstatus">
+                                    <div *ngIf="userreggroup.controls['password'].errors['pattern']"
+                                        style="color: red;">Only alphanumeric characters allowed</div>
+                                </div>
+                                <div>
+                                    <label class="form-label" for="confirm-password">Confirm User Password</label>
+                                    <input name="Password" type="password" class="form-control"
+                                        placeholder="Re-enter password" required="required">
+                                </div>
+                                <div
+                                    *ngIf="userreggroup.controls['password'].invalid && (userreggroup.controls['password'].dirty || userreggroup.controls['password'].touched) || validationstatus">
+                                    <div *ngIf="userreggroup.controls['password'].errors['pattern']"
+                                        style="color: red;">Only alphanumeric characters allowed</div>
+                                </div>
+                                <div>
+                                    <button type="submit" (click)="onSubmit()" id="form-submit">Register Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <br><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+</section>

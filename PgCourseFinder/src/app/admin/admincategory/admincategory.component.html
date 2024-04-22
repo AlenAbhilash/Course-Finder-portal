@@ -1,0 +1,23 @@
+<div class="main-content">
+    <div class="breadcrumb-wrap mb-20">
+        <div class="d-md-flex d-block justify-content-between align-items-center">
+            <div class="left">
+                <h1>Category Registration</h1>  
+            </div> 
+        </div>
+    </div> 
+        <div class="col-xl-6 col-lg-6">
+            <div class="panel mb-10"> 
+                </div> 
+                <div class="panel-body"> 
+                  <form [formGroup]="categoryregfrom"> 
+                        <div class="form-group mb-20">
+                            <label class="form-label" for="name">Categorys</label>
+                            <input type="text" class="form-control" formControlName="category_name"  placeholder="Enter Category name">
+                        </div>
+                        <div class="btn-box">
+                            <button type="submit" (click)=" onSubmit()" class="btn btn-success"> Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>

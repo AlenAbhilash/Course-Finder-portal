@@ -1,0 +1,94 @@
+<section class="heading-page header-text" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Applied Student Seat</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact-us" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 align-self-center">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form id="contact" [formGroup]="collegebookingpageviewmore">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2>Applied Student Seat</h2>
+                                </div> 
+                                <div class="col-lg-4">
+                                    <label>Select the Category</label>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="panel-body"> 
+                                        <div class="row">
+                                            <div class="col-sm-6 mb-20">
+                                                <select class="form-control form-controlg" formControlName="category_id"
+                                                    (change)="OnChange()">
+                                                    <option value="0">..Choose Your Category...</option>
+                                                    <option *ngFor="let data of catdataArray"
+                                                        value="{{data.category_id}}">
+                                                        {{data.category_name}}
+                                                    </option>
+                                                    <br><br><br><br>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-bordered">
+                                                <thead class="custom-table-header">
+                                                    <tr>
+                                                        <th>Student Name</th>
+                                                        <th>Pgcourse applied</th>
+                                                        <th>Seat Category</th>
+                                                        <th>Status</th>
+                                                        <ng-container *ngIf="category_id !== '2'">
+                                                            <th> 
+                                                                Remark
+                                                            </th>
+                                                        </ng-container>
+                                                        <ng-container *ngIf="category_id === '2'">
+                                                            <th>Schedule interview</th>
+                                                        </ng-container>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let data of seatdataArray; let i=index">
+                                                        <td>{{data.user_name}}</td>
+                                                        <td>{{data.pgcourse_name}}</td>
+                                                        <td>{{data.category_name}}</td>
+                                                        <td>{{data.bookingstatus}}</td>
+                                                        <ng-container *ngIf="category_id !== '2'">
+                                                            <td>
+                                                                <a
+                                                                    [routerLink]="['/collegemaster/collegebookingremarkothers',data.seatbooking_id]"><button
+                                                                        class="main-button-blue">
+                                                                        Send Remark
+                                                                    </button></a>
+                                                            </td>
+                                                        </ng-container>
+                                                        <ng-container *ngIf="category_id === '2'">
+                                                             <td>
+                                                                <a
+                                                                    [routerLink]="['/collegemaster/collegebookingremark',data.seatbooking_id]">
+                                                                    <button class="main-button-red">
+                                                                        Schedule
+                                                                    </button></a>
+                                                            </td>
+                                                        </ng-container>
+                                                    </tr> 
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div><br><br><br>
+    </div>
+</section>

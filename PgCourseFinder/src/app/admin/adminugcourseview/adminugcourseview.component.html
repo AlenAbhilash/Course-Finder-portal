@@ -1,0 +1,55 @@
+<!-- main sidebar -->
+<div class="main-content">
+    <div class="breadcrumb-wrap mb-20">
+        <div class="d-md-flex d-block justify-content-between align-items-center">
+            <div class="left">
+                <h1>UG Course View</h1>
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+    <div class="panel mb-5">
+        <form [formGroup]="uggroup">
+            <div class="panel-heading">
+                <span>UG Course</span>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class="panel mb-10">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered">
+                                <thead class="custom-table-header">
+                                    <tr>
+                                        <th>Slno.</th>
+                                        <th>UG Course</th>
+                                        <th>UG Course Image</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of ugdataArray; let i=index">
+                                        <td>{{i+1}}</td>
+                                        <td>{{data.ugcourse_name}}</td>
+                                        <td>
+                                            <img style="width:60px;height:60px;" src="http://localhost:3000/images/{{data.ugcourse_img}}" alt="">
+                                        </td>
+                                        <td><button type="button" class="btn btn-primary"  [routerLink]="['/adminmaster/admineditugcourse',data.ugcourse_id]">Edit</button></td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger"
+                                                onclick="return confirm('Are you sure you want to delete?');"
+                                                (click)="deleteugcourse(data.ugcourse_id)">
+                                                Delete
+                                                <i class="typcn typcn-delete-outline btn-icon-append"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

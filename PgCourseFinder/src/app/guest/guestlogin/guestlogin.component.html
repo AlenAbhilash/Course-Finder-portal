@@ -1,0 +1,81 @@
+<section class="heading-page header-text" id="top"
+    style="background-image: url('/assets/college/images/cambridge.avif'); background-size: cover; position: relative;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.2);">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Login Page</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 mx-auto align-center">
+                <link rel="stylesheet" href="/assets/login/fonts/material-icon/css/material-design-iconic-font.min.css">
+                <link rel="stylesheet" href="/assets/login/css/style.css">
+                <div class="main">
+                    <section class="sign-in">
+                        <div class="container">
+                            <div class="signin-content">
+                                <div class="signin-image">
+                                    <figure><img
+                                            src="https://images.unsplash.com/photo-1600195077077-7c815f540a3d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHVuaXZlcnNpdHl8ZW58MHx8MHx8fDA%3D"
+                                            alt="sing up image">
+                                    </figure>
+                                    <a [routerLink]="['/guestmaster/userreg']" class="signup-image-link">Register as
+                                        Student account </a><br>
+                                    <a [routerLink]="['/guestmaster/collegereg']" class="signup-image-link">Register as
+                                        College account </a>
+                                </div>
+
+                                <div class="signin-form">
+                                    <h2 class="form-title">Login </h2>
+                                    <form [formGroup]="LoginFormGroup">
+                                        <div class="form-group">
+                                            <label for="your_name"><i
+                                                    class="zmdi zmdi-account material-icons-name"></i></label>
+                                            <input type="text" name="your_name" formControlName="username"
+                                                placeholder="Your Name" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                            <input type="password" name="your_pass" formControlName="password"
+                                                placeholder="Password" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="checkbox" name="remember-me" id="remember-me"
+                                                class="agree-term" />
+                                            <label for="remember-me"
+                                                class="label-agree-term"><span><span></span></span>Remember
+                                                me</label>
+                                        </div>
+                                        <div class="form-group form-button">
+                                            <input type="submit" name="signin" id="signin" class="form-submit"
+                                                (click)="OnSubmit()" value="Log in">
+                                        </div>
+                                        <a [routerLink]="['/guestmaster/userforgotpassword']"
+                                            class="signup-image-link">Forget Password</a>
+                                    </form>
+                                    <div class="social-login">
+                                        <ul class="socials">
+                                            <li><a ><i class="display-flex-center zmdi zmdi-facebook"></i></a>
+                                            </li>
+                                            <li><a ><i class="display-flex-center zmdi zmdi-twitter"></i></a>
+                                            </li>
+                                            <li><a ><i class="display-flex-center zmdi zmdi-google"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <br><br><br>
+            </div>
+        </div>
+    </div>
+</section>

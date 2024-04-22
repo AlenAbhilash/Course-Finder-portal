@@ -1,0 +1,747 @@
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+    .container-fluid {
+        padding: 0 20px;
+        overflow: hidden;
+    }
+    .fixed-sidebar {
+        width: 280px;
+        .logo {
+            a {
+                width: 150px;
+            }
+        }
+    }
+    .main-content {
+        padding-left: 280px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    .top-boxes {
+        .row {
+            row-gap: 10px;
+            .panel {
+                .panel-body {
+                    padding: 20px;
+                    .part-icon {
+                        width: 50px;
+                        height: 50px;
+                        line-height: 50px;
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+    }
+    .recent-message {
+        ul {
+            li {
+                .message-box {
+                    padding: 10px 0;
+                    .part-img {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+            }
+        }
+    }
+    .latest-comments {
+        .table {
+            width: max-content;
+            tbody {
+                tr {
+                    td {
+                        padding: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .chat-box .chat-panel .message-in {
+        max-width: calc(100% - 30px);
+    }
+    .chat-box .chat-panel .message-in .part-img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+    .chat-box .chat-panel .message-in .txt-wrap {
+        max-width: calc(100% - 40px);
+    }
+    .chat-box .chat-panel .message-in .txt-wrap .part-txt .media {
+        width: 100%;
+        max-width: 350px;
+    }
+    .chat-box .chat-panel .message-out {
+        margin-left: 40px;
+    }
+    .chat-box .chat-panel .message-out .txt-wrap {
+        max-width: calc(100% - 40px);
+    }
+    .chat-box .chat-panel .message-out .txt-wrap .part-txt .media {
+        width: 100%;
+        max-width: 350px;
+    }
+    .chat-box .chat-panel .message-out .part-img {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+    }
+
+    .pricing .row {
+        row-gap: 10px;
+    }
+
+    .icons .demo-icon-wrapper {
+        padding: 0 10px;
+    }
+    .icons .demo-icon-wrapper span i {
+        font-size: 16px;
+    }
+    .icons .demo-icon-wrapper span {
+        font-size: 14px;
+    }
+    
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row .td-checkbox {
+        width: 2%;
+    }
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row .td-icon {
+        width: 2%;
+    }
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row.message-unread .td-name {
+        width: 24%;
+    }
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row .td-message {
+        width: 52%;
+    }
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row .td-date {
+        width: 16%;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .container-fluid {
+        padding: 0 20px;
+        overflow: hidden;
+    }
+    .main-content {
+        padding: 20px 0 10px 0;
+    }
+    .top-boxes {
+        .row {
+            row-gap: 10px;
+            .panel {
+                .panel-body {
+                    padding: 20px;
+                    .part-icon {
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .latest-comments {
+        .table {
+            width: max-content;
+        }
+    }
+
+    .chat-box .chat-panel .message-in {
+        max-width: calc(100% - 30px);
+    }
+    .chat-box .chat-panel .message-in .part-img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+    .chat-box .chat-panel .message-in .txt-wrap {
+        max-width: calc(100% - 40px);
+    }
+    .chat-box .chat-panel .message-in .txt-wrap .part-txt .media {
+        width: 100%;
+    }
+    .chat-box .chat-panel .message-out {
+        margin-left: 40px;
+    }
+    .chat-box .chat-panel .message-out .txt-wrap {
+        max-width: calc(100% - 40px);
+    }
+    .chat-box .chat-panel .message-out .txt-wrap .part-txt .media {
+        width: 100%;
+    }
+    .chat-box .chat-panel .message-out .part-img {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+    }
+
+    .pricing .row {
+        row-gap: 10px;
+    }
+
+    .icons .demo-icon-wrapper {
+        padding: 0 10px;
+    }
+    .icons .demo-icon-wrapper span i {
+        font-size: 16px;
+    }
+    .icons .demo-icon-wrapper span {
+        font-size: 14px;
+    }
+
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row .td-checkbox {
+        width: 2%;
+    }
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row .td-icon {
+        width: 2%;
+    }
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row.message-unread .td-name {
+        width: 22%;
+    }
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row .td-message {
+        width: 56%;
+    }
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row .td-date {
+        width: 14%;
+    }
+
+    .error-area .error-row .error-panel .part-img {
+        width: 60%;
+    }
+    .error-area .error-row .error-panel .part-txt h2 {
+        font-size: 30px;
+    }
+    .error-area .error-row .error-panel .part-txt p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .breadcrumb-wrap {
+        padding: 30px;
+        .left {
+            width: calc(100% - 260px);
+            h1 {
+                font-size: 25px;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+        .right {
+            width: 240px;
+            nav {
+                .breadcrumb {
+                    .breadcrumb-item {
+                        font-size: 14px;
+                        &:first-child {
+                            padding-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .pricing .row {
+        row-gap: 10px;
+    }
+
+    .mail-sidebar {
+        margin-bottom: 20px;
+    }
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row .td-checkbox {
+        width: 2%;
+    }
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row .td-icon {
+        width: 2%;
+    }
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row.message-unread .td-name {
+        width: 22%;
+    }
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row .td-message {
+        width: 56%;
+    }
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row .td-date {
+        width: 14%;
+    }
+
+    .error-area .error-row .error-panel .part-img {
+        width: 60%;
+    }
+    .error-area .error-row .error-panel .part-txt h2 {
+        font-size: 30px;
+    }
+    .error-area .error-row .error-panel .part-txt p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .breadcrumb-wrap {
+        padding: 20px 25px;
+        .left {
+            width: 100%;
+            h1 {
+                font-size: 25px;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 14px;
+                line-height: 20px;
+                margin-bottom: 4px;
+            }
+        }
+        .right {
+            width: 100%;
+            display: block;
+            nav {
+                .breadcrumb {
+                    .breadcrumb-item {
+                        font-size: 14px;
+                        &:first-child {
+                            padding-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .card-group{
+        row-gap: 10px;
+        .card {
+            flex: auto;
+            border: 1px solid rgba(0,0,0,.125) !important;
+        }
+    }
+
+    .chat-box .chat-panel .message-in {
+        max-width: calc(100% - 30px);
+    }
+    .chat-box .chat-panel .message-in .part-img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+    .chat-box .chat-panel .message-in .txt-wrap {
+        max-width: calc(100% - 40px);
+    }
+    .chat-box .chat-panel .message-out {
+        margin-left: 40px;
+    }
+    .chat-box .chat-panel .message-out .txt-wrap {
+        max-width: calc(100% - 40px);
+    }
+    .chat-box .chat-panel .message-out .part-img {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+    }
+
+    .pricing .row {
+        row-gap: 10px;
+    }
+
+    .icons .demo-icon-wrapper {
+        padding: 0 10px;
+    }
+    .icons .demo-icon-wrapper span i {
+        font-size: 16px;
+    }
+    .icons .demo-icon-wrapper span {
+        font-size: 14px;
+    }
+    
+    .mail-sidebar {
+        margin-bottom: 50px;
+    }
+    .mail-area .tab-content .tab-pane .table-message {
+        width: max-content;
+        max-width: none;
+    }
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row td {
+        width: auto !important;
+    }
+
+    .form-area .form-row {
+        width: calc(100% - 25px);
+    }
+    .form-area .form-row .form-panel {
+        padding: 25px;
+    }
+    .form-area .form-row .form-panel .logo {
+        margin-bottom: 20px !important;
+    }
+    .form-area .form-row .form-panel .logo img {
+        width: 200px;
+    }
+    .form-area .form-row .form-panel .logo p {
+        font-size: 14px;
+    }
+    .form-area p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .form-area a {
+        font-size: 14px;
+    }
+
+    .error-area .error-row {
+        width: calc(100% - 25px);
+    }
+    .error-area .error-row .error-panel .part-img {
+        width: 60%;
+    }
+    .error-area .error-row .error-panel .part-txt h2 {
+        font-size: 30px;
+    }
+    .error-area .error-row .error-panel .part-txt p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 575px) {
+    .breadcrumb-wrap {
+        padding: 20px 25px;
+        .left {
+            width: 100%;
+            h1 {
+                font-size: 25px;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 14px;
+                line-height: 20px;
+                margin-bottom: 4px;
+            }
+        }
+        .right {
+            width: 100%;
+            display: block;
+            nav {
+                .breadcrumb {
+                    .breadcrumb-item {
+                        font-size: 14px;
+                        &:first-child {
+                            padding-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .chat-box .chat-panel .message-in {
+        max-width: calc(100% - 30px);
+    }
+    .chat-box .chat-panel .message-in .part-img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+    .chat-box .chat-panel .message-in .txt-wrap {
+        max-width: calc(100% - 40px);
+    }
+    .chat-box .chat-panel .message-in .txt-wrap .part-txt .media {
+        width: 100%;
+    }
+    .chat-box .chat-panel .message-out {
+        margin-left: 40px;
+    }
+    .chat-box .chat-panel .message-out .txt-wrap {
+        max-width: calc(100% - 40px);
+    }
+    .chat-box .chat-panel .message-out .txt-wrap .part-txt .media {
+        width: 100%;
+    }
+    .chat-box .chat-panel .message-out .part-img {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+    }
+
+    .pricing .row {
+        row-gap: 10px;
+    }
+
+    .icons .demo-icon-wrapper {
+        padding: 0 10px;
+    }
+    .icons .demo-icon-wrapper span i {
+        font-size: 16px;
+    }
+    .icons .demo-icon-wrapper span {
+        font-size: 14px;
+    }
+    
+    .mail-sidebar {
+        margin-bottom: 50px;
+    }
+    .mail-area .tab-content .tab-pane .table-message {
+        width: max-content;
+        max-width: none;
+    }
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row td {
+        width: auto !important;
+    }
+
+    .form-area .form-row {
+        width: calc(100% - 25px);
+    }
+    .form-area .form-row .form-panel {
+        padding: 25px;
+    }
+    .form-area .form-row .form-panel .logo {
+        margin-bottom: 20px !important;
+    }
+    .form-area .form-row .form-panel .logo img {
+        width: 200px;
+    }
+    .form-area .form-row .form-panel .logo p {
+        font-size: 14px;
+    }
+    .form-area p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .form-area a {
+        font-size: 14px;
+    }
+
+    .error-area .error-row {
+        width: calc(100% - 25px);
+    }
+    .error-area .error-row .error-panel .part-img {
+        width: 90%;
+    }
+    .error-area .error-row .error-panel .part-txt h2 {
+        font-size: 30px;
+    }
+    .error-area .error-row .error-panel .part-txt p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+    .main-content {
+        padding: 10px 0 0 0;
+    }
+    .top-boxes {
+        .row {
+            row-gap: 10px;
+        }
+    }
+    .transaction-history {
+        ul {
+            li {
+                padding: 0;
+                .left {
+                    .transaction-badge {
+                        width: 30px;
+                        height: 30px;
+                        line-height: 30px;
+                        font-size: 16px;
+                        margin-right: 5px;
+                    }
+                    .transaction-with {
+                        font-size: 14px;
+                    }
+                }
+                .right {
+                    font-size: 14px;
+                    .transaction-icon {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+    .login {
+        padding: 0;
+    }
+
+    .panel {
+        .panel-heading {
+            padding: 0 10px;
+            span {
+                font-size: 15px;
+            }
+            .right {
+                .action-btn {
+                    font-size: 14px;
+                }
+            }
+        }
+        .panel-body {
+            padding: 10px;
+        }
+    }
+
+    .breadcrumb-wrap {
+        padding: 20px 25px;
+        .left {
+            width: 100%;
+            h1 {
+                font-size: 25px;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 14px;
+                line-height: 20px;
+                margin-bottom: 4px;
+            }
+        }
+        .right {
+            width: 100%;
+            display: block;
+            nav {
+                .breadcrumb {
+                    .breadcrumb-item {
+                        font-size: 14px;
+                        &:first-child {
+                            padding-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .card {
+        .card-header, .card-footer {
+            font-size: 14px;
+        }
+        .card-title {
+            font-size: 16px;
+            line-height: 26px;
+            margin-bottom: 5px;
+        }
+        .card-subtitle {
+            font-size: 14px;
+        }
+        .card-text {
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .list-group, .card-link {
+            font-size: 14px;
+        }
+        .blockquote {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+
+    .CodeMirror {
+        height: 400px;
+    }
+
+    .data-table {
+        .progress {
+            width: 150px;
+        }
+    }
+
+    .chat-box .chat-panel .message-in {
+        max-width: calc(100% - 30px);
+    }
+    .chat-box .chat-panel .message-in .part-img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+    .chat-box .chat-panel .message-in .txt-wrap {
+        max-width: calc(100% - 40px);
+    }
+    .chat-box .chat-panel .message-in .txt-wrap .part-txt .media {
+        width: 100%;
+    }
+    .chat-box .chat-panel .message-out {
+        margin-left: 40px;
+    }
+    .chat-box .chat-panel .message-out .txt-wrap {
+        max-width: calc(100% - 40px);
+    }
+    .chat-box .chat-panel .message-out .txt-wrap .part-txt .media {
+        width: 100%;
+    }
+    .chat-box .chat-panel .message-out .part-img {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+    }
+    .chat-box .message-type form label {
+        width: 40px;
+    }
+    .chat-box .message-type form textarea {
+        width: calc(100% - 80px);
+    }
+    .chat-box .message-type form button {
+        width: 40px;
+    }
+
+    .pricing .row {
+        row-gap: 10px;
+    }
+
+    .icons .demo-icon-wrapper {
+        padding: 0 10px;
+    }
+    .icons .demo-icon-wrapper span i {
+        font-size: 16px;
+    }
+    .icons .demo-icon-wrapper span {
+        font-size: 14px;
+    }
+    
+    .mail-sidebar {
+        margin-bottom: 50px;
+    }
+    .mail-area .tab-content .tab-pane .table-message {
+        width: max-content;
+        max-width: none;
+    }
+    .mail-area .tab-content .tab-pane .table-message .table-messages-row td {
+        width: auto !important;
+    }
+
+    .form-area .form-row {
+        width: calc(100% - 25px);
+    }
+    .form-area .form-row .form-panel {
+        padding: 25px;
+    }
+    .form-area .form-row .form-panel .logo {
+        margin-bottom: 20px !important;
+    }
+    .form-area .form-row .form-panel .logo img {
+        width: 200px;
+    }
+    .form-area .form-row .form-panel .logo p {
+        font-size: 14px;
+    }
+    .form-area p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .form-area a {
+        font-size: 14px;
+    }
+
+    .error-area .error-row {
+        width: calc(100% - 25px);
+    }
+    .error-area .error-row .error-panel .part-img {
+        width: 90%;
+    }
+    .error-area .error-row .error-panel .part-txt h2 {
+        font-size: 30px;
+    }
+    .error-area .error-row .error-panel .part-txt p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}

@@ -1,0 +1,46 @@
+<div class="main-content">
+    <div class="breadcrumb-wrap mb-20">
+        <div class="d-md-flex d-block justify-content-between align-items-center">
+            <div class="left">
+                <h1>Seat Course  Report</h1>
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+    <div class="panel mb-5"> 
+        <form [formGroup]="seatcoursereport">
+            <div class="panel-heading">
+                <span>Report</span>
+            </div>
+            <div>
+                <div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered" #TABLE #table>
+                                <thead class="custom-table-header">
+                                    <tr>
+                                        <th>College Name</th>
+                                        <th>Seat</th>
+                                        <th>Pgcourse</th>
+                                        <th>Ugcourse</th>
+                                        <th>Total Seats</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of seatcoursearray; let i=index">
+                                        <td> {{data.college_name}}</td>
+                                        <td> {{data.category_names}}</td>
+                                        <td>{{data.pgcourse_names}}</td>
+                                        <td>{{data.ugcourse_names}}</td>
+                                        <td>{{data.totalseats}}</td>
+                                    </tr> 
+                                </tbody>
+                            </table><br>
+                            <button (click)="ExportTOExcel()" class="btn btn-success">ExportTOExcel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,201 @@
+<section class="heading-page header-text" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Applied Seats</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact-us" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-30 align-self-center">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form id="contact" [formGroup]="userbookingpage">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <!-- <button class="main-button-red" (click)="ngOnInit()">All</button>&nbsp; -->
+                                            <button class="main-button-red"
+                                                (click)="OnChange('applied')">Applied</button>&nbsp;
+                                            <button class="main-button-red"
+                                                (click)="OnChange('Scheduled interview')">Scheduled
+                                                interview</button>&nbsp;
+                                            <button class="main-button-red"
+                                                (click)="OnChange('Accepted')">Accepted</button>&nbsp;
+                                            <button class="main-button-red"
+                                                (click)="OnChange('Rejected')">Rejected</button>&nbsp;
+                                            <button class="main-button-red"
+                                                (click)="OnChange('Under consideration')">Under
+                                                consideration</button>&nbsp;
+                                            <!-- <button class="main-button-red"
+                                                (click)="OnChange('booking completed')">booking completed</button>&nbsp; -->
+                                        </div>
+                                    </div>
+                                </div><br><br><br>
+                                <div *ngFor="let data of appiledarray">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="college-image img-fluid"
+                                                src="http://localhost:3000/images/{{data?.college_imge}}" alt="">
+                                        </div>
+                                        <div class="card-body">
+                                            <h6 class="card-text"><i class="fa fa-university" aria-hidden="true"></i>
+                                                College
+                                                Name: {{data?.college_name}}</h6>
+                                            <h6 class="card-text">Pg Course:
+                                                {{data?.pgcourse_name}}
+                                            </h6>
+                                            <h6 class="card-text">Category: {{data?.category_name}}
+                                            </h6>
+                                            <h6 class="card-text"
+                                                [style.color]="data?.bookingstatus === 'applied' ? 'blue' : ''">
+                                                {{data?.bookingstatus}}
+                                            </h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngFor="let data of Acceptedarray">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="college-image img-fluid"
+                                                src="http://localhost:3000/images/{{data?.college_imge}}" alt="">
+                                        </div>
+                                        <div class="card-body">
+                                            <h6 class="card-text"><i class="fa fa-university" aria-hidden="true"></i>
+                                                College
+                                                Name: {{data?.college_name}}</h6>
+                                            <h6 class="card-text">Pg Course:
+                                                {{data?.pgcourse_name}}
+                                            </h6>
+                                            <h6 class="card-text">Category: {{data?.category_name}}
+                                            </h6>
+                                            <h6 class="card-text">Remark: {{data?.remark}}
+                                            </h6>
+                                            <h6 class="card-text"
+                                                [style.color]="data?.bookingstatus === 'Accepted' ? 'darkgreen' : ''">
+                                                {{data?.bookingstatus}}
+                                            </h6>
+
+                                            <a
+                                                [routerLink]="['/usermaster/usermanagementadvancespayment',data.seatbooking_id]"><button
+                                                    class="main-button-red">Make Advance Payment</button></a>&nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngFor="let data of Rejectedarray">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="college-image img-fluid"
+                                                src="http://localhost:3000/images/{{data?.college_imge}}" alt="">
+                                        </div>
+                                        <div class="card-body">
+                                            <h6 class="card-text"><i class="fa fa-university" aria-hidden="true"></i>
+                                                College
+                                                Name: {{data?.college_name}}</h6>
+                                            <h6 class="card-text">Pg Course:
+                                                {{data?.pgcourse_name}}
+                                            </h6>
+                                            <h6 class="card-text">Category: {{data?.category_name}}
+                                            </h6>
+                                            <h6 class="card-text">Remark: {{data?.remark}}
+                                            </h6>
+                                            <h6 class="card-text" [style.color]="
+                                           data?.bookingstatus === 'Rejected' ? 'red' : ''">
+                                                {{data?.bookingstatus}}
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngFor="let data of underconsiderationarray">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="college-image img-fluid"
+                                                src="http://localhost:3000/images/{{data?.college_imge}}" alt="">
+                                        </div>
+                                        <div class="card-body">
+                                            <h6 class="card-text"><i class="fa fa-university" aria-hidden="true"></i>
+                                                College
+                                                Name: {{data?.college_name}}</h6>
+                                            <h6 class="card-text">Pg Course:
+                                                {{data?.pgcourse_name}}
+                                            </h6>
+                                            <h6 class="card-text">Category: {{data?.category_name}}
+                                            </h6>
+                                            <h6 class="card-text">Remark: {{data?.remark}}
+                                            </h6>
+                                            <h6 class="card-text" [style.color]="
+                                                data?.bookingstatus === 'booking completed' ? 'green' :
+                                                data?.bookingstatus === 'Under consideration' ? 'violet' : ''">
+                                                {{data?.bookingstatus}}
+                                            </h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngFor="let data of Scheduledinterview" class="card mb-4">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="college-image img-fluid"
+                                                src="http://localhost:3000/images/{{data?.college_imge}}" alt="">
+                                        </div>
+                                        <div class="card-body">
+                                            <h6 class="card-text"><i class="fa fa-university" aria-hidden="true"></i>
+                                                College
+                                                Name: {{data?.college_name}}</h6>
+                                            <h6 class="card-text">Pg Course:
+                                                {{data?.pgcourse_name}}
+                                            </h6>
+                                            <h6 class="card-text">Category: {{data?.category_name}}
+                                            </h6>
+                                            <h6 class="card-text">Remark: {{data?.remark}}
+                                            </h6>
+                                            <h6 class="card-text" [style.color]="
+                                             data?.bookingstatus === 'Scheduled interview' ? 'orange' :''">
+                                                {{data?.bookingstatus}}
+                                            </h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngFor="let data of allbooking" class="card mb-4">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img class="college-image img-fluid"
+                                                src="http://localhost:3000/images/{{data?.college_imge}}" alt="">
+                                        </div>
+                                        <div class="card-body">
+                                            <h6 class="card-text"><i class="fa fa-university" aria-hidden="true"></i>
+                                                College
+                                                Name: {{data?.college_name}}</h6>
+                                            <h6 class="card-text">Pg Course:
+                                                {{data?.pgcourse_name}}
+                                            </h6>
+
+                                            <h6 class="card-text">Category: {{data?.category_name}}
+                                            </h6>
+                                            <h6 class="card-text" [style.color]="
+                                             data?.bookingstatus === 'applied' ? 'blue' :
+                                             data?.bookingstatus === 'Scheduled interview' ? 'orange' :
+                                             data?.bookingstatus === 'Accepted' ? 'green' :
+                                             data?.bookingstatus === 'Under consideration' ? 'violet' : 
+                                             data?.bookingstatus === 'booking completed' ? 'green' : 
+                                             data?.bookingstatus === 'Rejected' ? 'red' : 'black'">
+                                                {{data?.bookingstatus}}
+                                            </h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div><br><br><br>
+    </div>
+</section>

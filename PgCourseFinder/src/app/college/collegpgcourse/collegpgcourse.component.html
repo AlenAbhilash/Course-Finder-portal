@@ -1,0 +1,72 @@
+<section class="heading-page header-text" id="top">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Register Pgcourse Available In your College</h2>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="contact-us" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 align-self-center">
+        <div class="row">
+          <div class="col-lg-12" id="contact"> 
+            <form [formGroup]="collegepgreggroup">
+              <div class="row">
+                <div class="col-lg-12">
+                  <h2>College Pg Course Registration</h2>
+                </div>
+                <div class="col-lg-4">
+                  <label for="ugCourse">Select the Ug course Available in Your College</label>
+                </div>
+                <div class="col-lg-12">
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-6 mb-20">
+                        <select class="form-select" id="ugCourse" formControlName="ugcourse_id" (change)="OnChange()">
+                          <option selected value="">..Choose Your UgCourse...</option>
+                          <option *ngFor="let data of ugdataArray" [ngValue]="data.ugcourse_id">
+                            {{data.ugcourse_name}}
+                          </option>
+                        </select>
+                      </div> 
+                    </div>
+                  </div> 
+                </div>
+                <div class="col-lg-12">
+                  <label for="pgCourse">Select the Pg course Available in Your College</label>
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-6 mb-20">
+                        <select class="form-select" id="pgCourse" formControlName="pgcourse_id">
+                          <option value="">..Choose Your Pgcourse...</option>
+                          <option *ngFor="let data of pgdataArray" [ngValue]="data.pgcourse_id">
+                            {{ data.pgcourse_name }}
+                          </option> 
+                        </select>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <label>Semester Fees of PG Course</label><br><br>
+                  <input type="text" formControlName="fees" placeholder="Enter the Fees" required="">
+              </div>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <!-- <input type="hidden" formControlName="login_id"> -->
+                    <button type="submit" (click)="onSubmit()" id="form-submit" class="btn btn-primary">Register
+                      PgCourse</button>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <br><br><br><br><br><br>
+      </div>
+    </div>
+  </div>
+</section>

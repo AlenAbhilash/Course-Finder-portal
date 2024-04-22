@@ -1,0 +1,42 @@
+  <!-- main sidebar -->
+  <div class="main-content">
+    <div class="breadcrumb-wrap mb-20">
+        <div class="d-md-flex d-block justify-content-between align-items-center">
+            <div class="left">
+                <h1>PG Course Registration</h1>  
+            </div>
+            <div class="right">
+                <nav aria-label="breadcrumb">
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="row g-10">
+        <div class="col-xl-6 col-lg-6">  
+             <div class="panel mb-10"> 
+                <div class="panel-heading">
+                    <span></span>
+                </div>  
+                <div class="panel-body">
+                    <form [formGroup]="pgregform" enctype="multipart/form-data">
+                        <label class="form-label" for="exampleInputEmail1">Ug Course</label><br><br>
+                        <select class="form-select form-control" formControlName="ugcourse_id" aria-label="Default select example">
+                            <option value="0">...Select UgCourse....</option>
+                            <option *ngFor="let data of UgArray" value="{{data.ugcourse_id}}">{{data.ugcourse_name}}</option>
+                        </select><br>
+                        <div class="form-group mb-20">
+                            <label class="form-label" for="exampleInputEmail1">Pg course Name</label>
+                            <input type="email" class="form-control" formControlName="pgcourse_name"id="exampleInputEmail1" placeholder="Enter the Pg Course Name">
+                        </div>
+                        <div class="form-group mb-20">
+                            <label class="form-label" for="exampleInputFile">Pg Course Image</label>
+                            <input class="form-control" type="file" formControlName="pgcourse_img" (change)="selectFile($event)" id="exampleInputFile">
+                        </div>
+                        
+                        <div class="btn-box">
+                            <button type="reset" class="btn btn-light">Reset Form</button>
+                            <button type="submit" (click)="onSubmit()" class="btn btn-success">Submit Form</button>
+                        </div>
+                    </form>
+                </div>
+            </div>

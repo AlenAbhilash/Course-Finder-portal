@@ -1,0 +1,61 @@
+<!-- main sidebar -->
+<div class="main-content">
+    <div class="breadcrumb-wrap mb-20">
+        <div class="d-md-flex d-block justify-content-between align-items-center">
+            <div class="left">
+                <h1>PG Course Registration</h1>
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>  
+    <div class="panel mb-5">
+        <div class="panel-heading">
+            <span>UG Course </span>
+        </div> 
+        <form [formGroup]="pggroup">
+            <div class="panel-body">
+                <div class="row mb-20">
+                    <div class="col-sm-6">
+                        <select class="form-control form-controlg" formControlName="ugcourse_id" (change)="OnChange()">
+                            <option value="1">..Choose Your District...</option>
+                            <option *ngFor="let data of ugdataArray" value="{{data.ugcourse_id}}">
+                                {{data.ugcourse_name}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary"  [routerLink]="['/adminmaster/adminpgcourse']">Add Course</button><br><br>
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <thead class="custom-table-header">
+                            <tr>
+                                <th>Slno.</th>
+                                <th>PG Course</th>
+                                <th>Image</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr> 
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of pgdataArray; let i=index">
+                                <td>{{i+1}}</td>
+                                <td>{{data.pgcourse_name}}</td>
+                                <td>
+                                    <img style="width: 60px; height: 60px;" src="http://localhost:3000/images/{{data.pgcourse_img}}" alt="">
+                                </td>
+                                <td><button type="button" class="btn btn-primary"  [routerLink]="['/adminmaster/admineditpgcourse',data.pgcourse_id]"><span class="bi bi-pen"></span></button></td>
+                                <td> 
+                                    <button type="button" class="btn btn-danger" 
+                                        (click)="deletepg(data.pgcourse_id)">
+                                        <span class="bi bi-trash"></span>
+                                        <i class="typcn typcn-delete-outline btn-icon-append"></i>
+                                    </button>
+                                </td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

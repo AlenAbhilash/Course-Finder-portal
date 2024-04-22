@@ -1,0 +1,130 @@
+<section class="heading-page header-text" id="top"
+    style="background-image: url('/assets/college/images/cambridge.avif'); background-size: cover; position: relative;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.2);">
+    </div>
+    <div class="col-lg-12">
+        <h2>College</h2>
+    </div>
+</section>
+<section style="background-color: #eee;">
+    <form [formGroup]="usercollegeview" class="mb-4">
+        <div class="container py-5">
+            <div class="container-wrapper">
+                <div class="sidebar">
+                    <h5><u>Search College By Pg Course</u></h5><br>
+                    <div>
+                        <a style="border-right: 2px solid #ccc;" *ngFor="let data of collegepgcoursedataArray"
+                            (click)="OnChange(data.pgcourse_id)"
+                            [attr.data-value]="data.pgcourse_id">{{data?.pgcourse_name}}</a>
+                    </div>
+                    <br><br>
+                    <h5><u>Aided & Unaided</u></h5><br>
+                    <a style="border-right: 2px solid #ccc;" (click)="select('aided')" formControlName="type">Aided</a>
+                    <a style="border-right: 2px solid #ccc;" (click)="select('Unaided')"
+                        formControlName="type">Unaided</a>
+                </div>
+                <div class="col-lg-9">
+                    <a [routerLink]="['/usermaster/userfiltercollege']"><button class="btn btn-warning">Filter <i
+                                class="bi bi-filter"></i></button></a><br><br>
+                    <div *ngIf="collegetypeview.length > 0 && !collegedataArraypg.length">
+                        <div *ngFor="let data of collegetypeview" class="card mb-4">
+                            <div class="row g-0">
+                                <div class="col-md-3">
+                                    <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                                        <img class="college-image img-fluid"
+                                            src="http://localhost:3000/images/{{data?.college_imge}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><i class="fa fa-university" aria-hidden="true"></i>
+                                            College
+                                            Name: {{data?.college_name}}</h5>
+                                        <p class="card-text"><i class="bi bi-envelope"></i> College Email:
+                                            {{data?.email}}
+                                        </p>
+                                        <p class="card-text"><i class="bi bi-cash"></i> College Aid Type: {{data?.type}}
+                                        </p>
+                                        <p class="card-text"><i class="bi bi-house"></i> College Address:
+                                            {{data?.Address}}
+                                        </p>
+                                        <a [routerLink]="['/usermaster/usercollegeviewmore',data.college_id]"><button
+                                                class="btn btn-danger">View More Details</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="collegedataArraypg.length > 0 && !collegetypeview.length">
+                        <div *ngFor="let data of collegedataArraypg" class="card mb-4">
+                            <div class="row g-0">
+                                <div class="col-md-3">
+                                    <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                                        <img class="college-image img-fluid"
+                                            src="http://localhost:3000/images/{{data?.college_imge}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><i class="fa fa-university" aria-hidden="true"></i>
+                                            College
+                                            Name: {{data?.college_name}}</h5>
+                                        <p class="card-text"><i class="bi bi-envelope"></i> College Email:
+                                            {{data?.email}}
+                                        </p>
+                                        <p class="card-text"><i class="bi bi-cash"></i> College Aid Type: {{data?.type}}
+                                        </p>
+                                        <p class="card-text"><i class="bi bi-house"></i> College Address:
+                                            {{data?.Address}}
+                                        </p>
+                                        <a [routerLink]="['/usermaster/usercollegeviewmore',data.college_id]"><button
+                                                class="btn btn-danger">View More Details</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div *ngIf="collegedataArray.length > 0 && collegedataArraypg.length === 0">
+                        <div class="alert alert-info" role="alert">
+                            No colleges available for the selected PG course.
+                        </div>
+                    </div> -->
+                    <div *ngIf="!collegedataArraypg.length && !collegetypeview.length">
+                        <div *ngIf="collegedataArray.length > 0">
+                            <div *ngFor="let data of collegedataArray" class="card mb-4">
+                                <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                                            <img class="college-image img-fluid"
+                                                src="http://localhost:3000/images/{{data?.college_imge}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="fa fa-university" aria-hidden="true"></i>
+                                                College
+                                                Name: {{data?.college_name}}</h5>
+                                            <p class="card-text"><i class="bi bi-envelope"></i> College Email:
+                                                {{data?.email}}
+                                            </p>
+                                            <p class="card-text"><i class="bi bi-cash"></i> College Aid Type:
+                                                {{data?.type}}
+                                            </p>
+                                            <p class="card-text"><i class="bi bi-house"></i> College Address:
+                                                {{data?.Address}}
+                                            </p>
+                                            <a [routerLink]="['/usermaster/usercollegeviewmore',data.college_id]"><button
+                                                    class="btn btn-danger">View More Details</button></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

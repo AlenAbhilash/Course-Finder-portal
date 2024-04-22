@@ -1,0 +1,21 @@
+.table {
+    margin-bottom: 0;
+    min-width: max-content;
+    thead {
+        th {
+            padding: 15px ;
+        }
+    }
+    tbody {
+        tr {
+            td {
+                padding: 15px;
+                vertical-align: middle;
+                img {
+                    width: 40px;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,81 @@
+<section class="meetings-page" id="meetings">
+    <form [formGroup]="userprofile">
+        <div class="container">
+            <div class="row gutters" *ngFor="let data of userprofileeditarray">
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="account-settings">
+                                <div class="user-profile">
+                                    <div class="user">
+                                        <img src="http://localhost:3000/images/{{data?.user_img}}">
+                                    </div>
+                                    <h5 class="user-name"></h5>
+                                    <h6 class="user-email"></h6>
+                                </div>
+                                <div class="about">
+                                    <p></p>
+                                    <input class="form-control" type="file" formControlName="user_img" (change)="selectFile($event)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h4 class="mb-2 text-primary" style="text-decoration: underline;">Update Personal
+                                        Details</h4>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="fullName">Full Name</label>
+                                        <input type="text" class="form-control" formControlName="user_name">
+                                        <label for="fullName">Email</label>
+                                        <input type="text" class="form-control" formControlName="email">
+                                        <label for="fullName">Select District</label>
+                                        <select class="form-control form-controlg" formControlName="dis_id">
+                                            <option value="0">..Choose Your District...</option>
+                                            <option *ngFor="let data of diseditarray" value="{{data.dis_id}}">
+                                                {{data.dis_name}}
+                                            </option>
+                                        </select>
+                                        <label for="fullName">Select Location</label>
+                                        <select class="form-control form-controlg" formControlName="loc_id">
+                                            <option value="0">..Choose Your Location...</option>
+                                            <option *ngFor="let data of loceditarray" [value]="data.loc_id">
+                                                {{data.loc_name}}
+                                            </option>
+                                        </select>
+                                        <label for="fullName">Phone</label>
+                                        <input type="text" class="form-control" formControlName="phone">
+                                            <label for="fullName">Pincode</label>
+                                        <input type="text" class="form-control" formControlName="pincode">
+                                            <label for="fullName">Address</label>
+                                        <input type="text" class="form-control" formControlName="address">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="text-right"><br><br>
+                                        <button type="button" (click)="Onsubmit()" name="submit" class="btn btn-warning">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br>
+    </form>
+</section>

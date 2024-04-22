@@ -1,0 +1,45 @@
+.progress-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.progress {
+    height: 15px;
+    border-radius: 3px;
+    &.h-sm {
+        height: 2px;
+    }
+    &.h-md {
+        height: 8px;
+    }
+    &.h-lg {
+        height: 10px;
+    }
+    &.h-xl {
+        height: 20px;
+    }
+}
+.progress-bar:not(.bg-secondary, .bg-success, .bg-info, .bg-warning, .bg-danger, .bg-light, .bg-dark) {
+    background: $gradient-1;
+    &.progress-bar-animated {
+        animation: inherit;
+        &:after {
+            animation: 1s linear infinite progress-bar-stripes;
+        }
+    }
+    &.progress-bar-striped {
+        position: relative;
+        z-index: 2;
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+            background-size: 1rem 1rem;
+            z-index: -1;
+        }
+    }
+}

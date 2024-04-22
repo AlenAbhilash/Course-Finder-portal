@@ -1,0 +1,145 @@
+.mail-sidebar {
+    .new-message-btn {
+        padding-bottom: 20px;
+    }
+    .nav {
+        .nav-link {
+            font-size: 15px;
+            text-align: left;
+            line-height: 100%;
+            color: $black;
+            border-radius: 5px;
+            padding: 15px;
+            &.active {
+                background: $color-1;
+                color: $white;
+                &:hover {
+                    background: $color-1;
+                }
+            }
+            .badge {
+                float: right;
+            }
+            &:hover {
+                background: rgba($color-1, 0.1);
+            }
+        }
+    }
+}
+
+.mail-area {
+    .tab-content {
+        .tab-pane {
+            transition: 0.3s linear;
+            transform: translateY(100px);
+            &.show {
+                transform: translateY(0);
+            }
+            .top-bar {
+                margin-bottom: 20px;
+                .right-btn {
+                    column-gap: 5px;
+                    .info {
+                        font-size: 13px;
+                        line-height: 100%;
+                        color: $black;
+                        span {
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+            .table-message {
+                width: 100%;
+                min-width: auto;
+                max-width: 100%;
+                margin-bottom: 0;
+                .table-messages-row {
+                    cursor: pointer;
+                    &:last-child {
+                        td {
+                            border-bottom: 0;
+                        }
+                    }
+                    &.message-unread {
+                        .td-name {
+                            font-weight: 600;
+                        }
+                    }
+                    td {
+                        padding: 15px 10px;
+                        font-size: 14px;
+                    }
+                    .td-checkbox {
+                        width: 2%;
+                        padding-left: 20px;
+                    }
+                    .td-icon {
+                        width: 2%;
+                        font-size: 12px;
+                        line-height: 100%;
+                        .btn-icon-favorite {
+                            color: $warning;
+                        }
+                        .btn-icon-danger {
+                            color: $danger;
+                        }
+                        .btn-icon-unactive {
+                            opacity: 0.5;
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    .td-name {
+                        width: 20%;
+                    }
+                    .td-message {
+                        width: 60%;
+                        .message-wrapper {
+                            width: 100%;
+                            max-width: 100%;
+                            overflow: hidden;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 1;
+                            -webkit-box-orient: vertical;
+                            .message-subject {
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                    .td-date {
+                        width: 12%;
+                        text-align: right;
+                        padding-right: 20px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+.dropdown {
+    .dropdown-menu {
+        min-width: 160px;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: 0px 5px 20px 0px rgba($black, 0.2);
+        li {
+            padding: 0;
+            .dropdown-item {
+                line-height: 100%;
+                color: $black;
+                padding: 10px 15px;
+                i {
+                    width: 20px;
+                    margin-right: 5px;
+                }
+                &:hover, &:active, &:focus {
+                    background: $secondary-light;
+                }
+            }
+        }
+    }
+}
